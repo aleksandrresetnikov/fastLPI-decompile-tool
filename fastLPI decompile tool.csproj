@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analyzer\Accesslevel.cs" />
+    <Compile Include="Analyzer\ClassContentManager.cs" />
+    <Compile Include="Analyzer\CodeMarkup.cs" />
+    <Compile Include="Analyzer\DocumentItem.cs" />
+    <Compile Include="Analyzer\JavaClassType.cs" />
     <Compile Include="DecompilerProperties.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="IDecompilerProperties.cs" />
@@ -52,7 +57,9 @@
     <Compile Include="MethodDictionary.cs" />
     <Compile Include="NonExistingCommandException.cs" />
     <Compile Include="NonExistingMethodException.cs" />
+    <Compile Include="Patterns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
