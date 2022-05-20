@@ -9,3 +9,6 @@ I found a very handy jd-cli (https://github.com/intoolswetrust/jd-cli) utility, 
 
 For example :
 The jd-cli decompiler has an outputZipFile command that takes the value of the output zip path, and in the dictionary this command will be given as "-oz".
+
+## Additionally.
+I started developing a java source code analyzer to determine which packages, classes, methods are in the library.
