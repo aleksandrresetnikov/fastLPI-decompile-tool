@@ -31,5 +31,14 @@
 
         internal static readonly string AnyClassStructurePattern =
             @"{(\s+?|\w+?|\W+?)*}";
+
+        internal static readonly string AnyMethodPattern =
+            @"(public|private|protected|virtual|abstract|\b)(\s+?)*(static|final|abstract|\b)(\s+?)*(\w+?|\.+?)*(\s+?)*(\w+?)*(\s+?)*\((\w+?|\s+?|\.+?|\,+?|\=+?)*\)";
+
+        internal static readonly string AnyMethodStructurePattern =
+            @"(public|private|protected|virtual|abstract|\b)(\s+?)*(static|final|abstract|\b)(\s+?)*(\w+?|\.+?)*(\s+?)*(\w+?)*(\s+?)*\((\w+?|\s+?|\.+?|\,+?|\=+?)*\)(\s+?)*{[^\{|^\}]*}";
+
+        internal static readonly string AnyMethodArgumentsStructurePattern =
+            @"\((\w+?|\s+?|\.+?|\,+?|\=+?)*\)";
     }
 }

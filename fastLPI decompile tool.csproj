@@ -46,10 +46,14 @@
     <Compile Include="Analyzer\CodeMarkup.cs" />
     <Compile Include="Analyzer\DocumentItem.cs" />
     <Compile Include="Analyzer\JavaClassType.cs" />
+    <Compile Include="Analyzer\Method.cs" />
+    <Compile Include="Analyzer\MethodUtil.cs" />
     <Compile Include="DecompilerProperties.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="IDecompilerProperties.cs" />
     <Compile Include="IJavaDecompiler.cs" />
+    <Compile Include="IJavaDecompilerLogs.cs" />
+    <Compile Include="IJD_CLI_JavaDecompiler.cs" />
     <Compile Include="IMethodDictionary.cs" />
     <Compile Include="JavaDecompiler.cs" />
     <Compile Include="JD_CLI_Dictionary.cs" />

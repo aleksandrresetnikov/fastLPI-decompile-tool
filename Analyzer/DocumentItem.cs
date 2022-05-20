@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text.RegularExpressions;
 
 using fastLPI.tools.decompiler.helper;
@@ -10,13 +9,14 @@ namespace fastLPI.tools.decompiler.analytics
     {
         public string Package { get; private protected set; }
         public string Path { get; private protected set; }
-        public string DocumentText { get; private protected set; }
-        public string[] DocumentLines { get; private protected set; }
-        public JavaClassType DocumentType { get; private protected set; }
-        public Accesslevel Accesslevel { get; private protected set; }
+        public virtual string DocumentText { get; private protected set; }
+        public virtual string[] DocumentLines { get; private protected set; }
+        public virtual JavaClassType DocumentType { get; private protected set; }
+        public virtual Accesslevel Accesslevel { get; private protected set; }
         public string Name { get; private protected set; }
-        public string FullName { get => $"{this.Package}.{this.Name}".RemoveSpaces(); }
-        public string ClassContent { get; private protected set; }
+        public virtual string FullName { get => $"{this.Package}.{this.Name}".RemoveSpaces(); }
+        public virtual string ClassContent { get; private protected set; }
+        public virtual Method[] Methods { get; private protected set; }
 
         public DocumentItem(string Path)
         {
@@ -24,16 +24,17 @@ namespace fastLPI.tools.decompiler.analytics
             this.Load();
         }
 
-        private void Load()
+        private protected virtual void Load()
         {
             this.DocumentText = File.ReadAllText(this.Path);
             this.DocumentLines = File.ReadAllLines(this.Path);
 
             LoadPackage();
             LoadClassType();
+            LoadMethods();
         }
 
-        private void LoadPackage()
+        private protected virtual void LoadPackage()
         {
             if (Regex.IsMatch(this.DocumentText, Patterns.JavaPackagePattern))
             {
@@ -53,7 +54,7 @@ namespace fastLPI.tools.decompiler.analytics
             }*/
         }
 
-        private string RemoveLinePackageText(string text)
+        private protected string RemoveLinePackageText(string text)
         {
             string outValue = text;
             outValue = outValue.RemoveSpaces();
@@ -63,7 +64,7 @@ namespace fastLPI.tools.decompiler.analytics
             return outValue;
         }
 
-        private void LoadClassType()
+        private protected virtual void LoadClassType()
         {
             if (Regex.IsMatch(this.DocumentText, Patterns.JavaClassPattern))
             {
@@ -124,6 +125,11 @@ namespace fastLPI.tools.decompiler.analytics
                     return;
                 }
             }*/
+        }
+
+        private protected virtual void LoadMethods()
+        {
+            MethodUtil.GetMethodsInClass(this.ClassContent);
         }
     }
 }

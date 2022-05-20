@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.IO;
-
-using fastLPI.tools.decompiler.helper;
 
 namespace fastLPI.tools.decompiler.analytics
 {

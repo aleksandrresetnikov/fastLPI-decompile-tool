@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Collections.Generic;
 using System.IO;
 
 namespace fastLPI.tools.decompiler
 {
-    public class JD_CLI_JavaDecompiler : JavaDecompiler
+    //https://github.com/intoolswetrust/jd-cli
+    //https://github.com/betterphp/JDCommandLine
+    //https://github.com/nviennot/jd-core-java
+
+
+    public class JD_CLI_JavaDecompiler : JavaDecompiler, IJD_CLI_JavaDecompiler, IJavaDecompilerLogs
     {
         public static string GetLokationFolder() => (Environment.CurrentDirectory);
 
@@ -23,6 +29,15 @@ namespace fastLPI.tools.decompiler
         public long DecompileLeadTime 
         { get; private protected set; }
 
+        public StreamReader DecompilerProcessReader
+        { get; private protected set; }
+
+        public string DecompilerProcessReaderOutputData
+        { get; private protected set; }
+
+        public List<string> Logs
+        { get; private protected set; }
+
         private Stopwatch Stopwatch;
 
         public JD_CLI_JavaDecompiler(string InputPath, string OutputPath)
@@ -32,6 +47,8 @@ namespace fastLPI.tools.decompiler
 
             this.Properties = new DecompilerProperties(new JD_CLI_Dictionary());
             this.Stopwatch = new Stopwatch();
+
+            this.AddLog("Loaded.");
         }
 
         public override void Decompile(bool insertFile = false)
@@ -45,9 +62,11 @@ namespace fastLPI.tools.decompiler
 
             this.Stopwatch.Stop();
             this.DecompileLeadTime = this.Stopwatch.ElapsedMilliseconds;
+
+            this.AddLog("Decompiling.");
         }
 
-        private protected virtual void CreateDecompilerExeBatFile()
+        public virtual void CreateDecompilerExeBatFile()
         {
             string BatCode = File.ReadAllText(DecompilerBatPath);
             BatCode = BatCode.Replace("$$$FILEPATH$$$", $"\"%{PathIn}%\"");
@@ -56,17 +75,44 @@ namespace fastLPI.tools.decompiler
             BatCode = BatCode.Replace("$$$OPTIONS$$$", Properties.CompileDecompilerOptions());
             File.WriteAllText(DecompilerExeBatPath, BatCode);
 
+            this.AddLog("CreateDecompilerExeBatFile.");
+
         }
 
-        private protected virtual void InitDecompilerProcess()
+        public virtual void InitDecompilerProcess()
         {
             this.DecompilerProcess = new Process();
+
             this.DecompilerProcess.StartInfo.FileName = this.DecompilerExeBatPath;
             this.DecompilerProcess.StartInfo.CreateNoWindow = this.CreateNoWindow;
             this.DecompilerProcess.StartInfo.UseShellExecute = false;
+            this.DecompilerProcess.StartInfo.RedirectStandardOutput = true;
+
             this.DecompilerProcess.Start();
-            this.DecompilerProcess.WaitForExit();
+            this.DecompilerProcessReader = this.DecompilerProcess.StandardOutput;
+
+            UpdateDecompilerProcessReaderOutputData();
             File.Delete(this.DecompilerExeBatPath);
+
+            this.AddLog("InitDecompilerProcess.");
+        }
+
+        public virtual void UpdateDecompilerProcessReaderOutputData()
+        {
+            this.DecompilerProcessReaderOutputData = this.DecompilerProcessReader.ReadToEnd();
+        }
+
+        public void AddLog(string data, bool showTime = false)
+        {
+            if (this.Logs == null)
+                this.Logs = new List<string>();
+
+            this.Logs.Add(showTime ? DateTime.Now.ToString() : "" + data);
+        }
+
+        public IEquatable<string> GetLogs()
+        {
+            return (this.Logs as IEquatable<string>);
         }
     }
 }
