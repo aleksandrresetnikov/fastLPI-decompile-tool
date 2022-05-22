@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml.Linq;
 using fastLPI.tools.decompiler.helper;
 
 namespace fastLPI.tools.decompiler.data
@@ -16,19 +17,27 @@ namespace fastLPI.tools.decompiler.data
         public int JarDataLoaderProcess_ExitCode 
         { get; private protected set; }
 
-        public string JarDataLoaderProcess_ExitXmlResult
+        public string JarDataLoaderProcess_ExitXmlResultPath
         { get; private protected set; }
 
         public virtual JarFile Document
+        { get; private protected set; }
+
+        /// <summary>
+        /// Xml file.
+        /// </summary>
+        public XElement XmlFile
         { get; private protected set; }
 
         public string JarPath = @"C:\Users\user\source\repos\Test\bin\Debug\netcoreapp3.1\data analytics\JarData\jd-gui-forLPI.jar";
         public string FilePath = @"C:\Users\user\source\repos\Test\bin\Debug\netcoreapp3.1\data analytics\JarData\jd-gui-forLPI.jar";
         public bool JarDataLoaderProcess_CreateNoWindow = true;
 
-        private Process JarDataLoaderProcess;
-        private Queue<DataReceivedEventArgs> JarDataLoaderProcess_OutputData = new Queue<DataReceivedEventArgs>();
-        private Queue<DataReceivedEventArgs> JarDataLoaderProcess_ErrorData = new Queue<DataReceivedEventArgs>();
+        private protected Process JarDataLoaderProcess;
+        private protected Queue<DataReceivedEventArgs> JarDataLoaderProcess_OutputData = new Queue<DataReceivedEventArgs>();
+        private protected Queue<DataReceivedEventArgs> JarDataLoaderProcess_ErrorData = new Queue<DataReceivedEventArgs>();
+
+        private protected JarDocumentLoadingPropertiesBuilder LoadingPropertiesBuilder;
 
         public JarDataLoader(string FilePath)
         {
@@ -77,12 +86,17 @@ namespace fastLPI.tools.decompiler.data
             this.JarDataLoaderProcess.Start();
             this.JarDataLoaderProcess.WaitForExit();
             this.JarDataLoaderProcess_ExitCode = this.JarDataLoaderProcess.ExitCode;
-            this.JarDataLoaderProcess_ExitXmlResult = this.FilePath + "-data.xml";
+            this.JarDataLoaderProcess_ExitXmlResultPath = this.FilePath + "-data.xml";
+            this.XmlFile = XElement.Load(this.JarDataLoaderProcess_ExitXmlResultPath);
         }
 
-        private protected virtual void LoadJarDataContentFromXmlResult()
+        public virtual void LoadJarDataContentFromXmlResult()
         {
+            this.LoadingPropertiesBuilder = new JarDocumentLoadingPropertiesBuilder
+                (this.XmlFile);
 
+            this.Document = new JarFile(this.JarDataLoaderProcess_ExitXmlResultPath,
+                this.LoadingPropertiesBuilder.Build());
         }
 
         public void SaveXmlResultTo(string path)
@@ -101,16 +115,110 @@ namespace fastLPI.tools.decompiler.data
         }
     }
 
+    public class JarDocumentLoadingPropertiesBuilder
+    {
+        /// <summary>
+        /// Xml file.
+        /// </summary>
+        public XElement XmlFile
+        { get; private protected set; }
+
+        public JarDocumentLoadingPropertiesBuilder(XElement XmlFile)
+        {
+            this.XmlFile = XmlFile;
+        }
+
+        public JarDocumentLoadingProperties Build()
+        {
+            try
+            {
+                if (this.XmlFile.IsContainName("_____LPI_DATA_SAVING_SAVE_PROPERTIES_____"))
+                {
+
+                    return new JarDocumentLoadingProperties
+                    {
+                        SaveTime = Convert.ToInt64(this.XmlFile.GetItemFromName("SavingTime").Attribute("value")),
+                    };
+                }
+                else
+                {
+                    throw new JarDocumentLoadingPropertiesException();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new JarDocumentLoadingPropertiesException(ex.Message);
+            }
+        }
+    }
+
+    public static class XElementContainerHelper
+    {
+        public static bool IsContainName(this XElement XmlElement, string ItemName)
+        {
+            foreach (XElement item in XmlElement.Elements())
+                if (item.Name == ItemName)
+                    return true;
+
+            return false;
+        }
+
+        public static XElement GetItemFromName(this XElement XmlElement, string ItemName)
+        {
+            foreach (XElement item in XmlElement.Elements())
+                if (item.Name == ItemName)
+                    return item;
+
+            return null;
+        }
+    }
+
+    public class JarDocumentLoadingPropertiesException : Exception
+    {
+        public override string Message => "Error constructing a new instance of the JarDocumentLoadingProperties class.";
+
+        public JarDocumentLoadingPropertiesException() :
+            base()
+        { }
+
+        public JarDocumentLoadingPropertiesException(string message) :
+            base(message)
+        { }
+
+        public JarDocumentLoadingPropertiesException(string message, Exception innerException) :
+            base(message, innerException)
+        { }
+        
+        protected JarDocumentLoadingPropertiesException(SerializationInfo info, StreamingContext context) :
+            base(info, context)
+        { }
+    }
+
     public class JarFile
     {
+        /// <summary>
+        /// Path to xml file.
+        /// </summary>
         public string XmlPath
         { get; private protected set; }
 
+        /// <summary>
+        /// .jar file save properties.
+        /// </summary>
         public virtual JarDocumentLoadingProperties DocumentProperties
         { get; private protected set; }
 
+        /// <summary>
+        /// Child items.
+        /// </summary>
         public Queue<JarDocumentItem> ChildItems
-        { get; private protected set; }
+        { get; set; }
+
+        public JarFile(string XmlPath, JarDocumentLoadingProperties DocumentProperties)
+        {
+            this.XmlPath = XmlPath;
+            this.DocumentProperties = DocumentProperties;
+        }
     }
 
     public class JarDocumentLoadingProperties
@@ -119,19 +227,19 @@ namespace fastLPI.tools.decompiler.data
         /// .jar file data saving time.
         /// </summary>
         public long SaveTime
-        { get; private protected set; }
+        { get; set; }
 
         /// <summary>
         /// .jar file input path.
         /// </summary>
         public string InputPath
-        { get; private protected set; }
+        { get; set; }
 
         /// <summary>
         /// .jar file output path.
         /// </summary>
         public string OutputPath
-        { get; private protected set; }
+        { get; set; }
     }
 
     /// <summary>
@@ -192,13 +300,13 @@ namespace fastLPI.tools.decompiler.data
         public JarDocumentItemType ItemType
         { get; private protected set; }
         /// <summary>
-        /// The element's parent. Null if this is the root element.
+        /// The item's parent. Null if this is the root element.
         /// </summary>
         public JarDocumentItem ParentDocumentItem
         { get; private protected set; }
 
         /// <summary>
-        /// Child elements.
+        /// Child items.
         /// </summary>
         public Queue<JarDocumentItem> ChildItems
         { get; private protected set; }
