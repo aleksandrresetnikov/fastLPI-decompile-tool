@@ -12,3 +12,6 @@ The jd-cli decompiler has an outputZipFile command that takes the value of the o
 
 ## Additionally.
 I started developing a java source code analyzer to determine which packages, classes, methods are in the library.
+
+## New:
+JarDataLoader - loading data about jar file from xml file.
