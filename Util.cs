@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 using fastLPI.tools.decompiler.analytics;
 
@@ -6,6 +7,8 @@ namespace fastLPI.tools.decompiler.helper
 {
     public static class Util
     {
+        public static string GetLokationFolder() => (Environment.CurrentDirectory);
+
         public static string RemoveSpaces(this string Text) =>
             Text.Replace(" ", "");
 

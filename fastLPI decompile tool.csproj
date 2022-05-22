@@ -48,6 +48,8 @@
     <Compile Include="Analyzer\JavaClassType.cs" />
     <Compile Include="Analyzer\Method.cs" />
     <Compile Include="Analyzer\MethodUtil.cs" />
+    <Compile Include="Data\IJarDataLoader.cs" />
+    <Compile Include="Data\JarDataLoader.cs" />
     <Compile Include="DecompilerProperties.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="IDecompilerProperties.cs" />

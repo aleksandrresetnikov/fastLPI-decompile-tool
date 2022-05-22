@@ -3,25 +3,24 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
 
+using fastLPI.tools.decompiler.helper;
+
 namespace fastLPI.tools.decompiler
 {
     //https://github.com/intoolswetrust/jd-cli
     //https://github.com/betterphp/JDCommandLine
     //https://github.com/nviennot/jd-core-java
 
-
     public class JD_CLI_JavaDecompiler : JavaDecompiler, IJD_CLI_JavaDecompiler, IJavaDecompilerLogs
     {
-        public static string GetLokationFolder() => (Environment.CurrentDirectory);
-
         private protected override string DecompilerBatPath 
-        { get => $@"{GetLokationFolder()}\decompiler\ProgDecompiler.bat"; }
+        { get => $@"{Util.GetLokationFolder()}\decompiler\ProgDecompiler.bat"; }
 
         private protected override string DecompilerExeBatPath 
-        { get => $@"{GetLokationFolder()}\decompiler\ExeProgDecompiler.bat"; }
+        { get => $@"{Util.GetLokationFolder()}\decompiler\ExeProgDecompiler.bat"; }
 
         private protected override string DecompilerPath 
-        { get => $@"{GetLokationFolder()}\decompiler\jd-cli.jar"; }
+        { get => $@"{Util.GetLokationFolder()}\decompiler\jd-cli.jar"; }
 
         public virtual DecompilerProperties Properties
         { get; set; }

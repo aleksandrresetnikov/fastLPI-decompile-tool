@@ -1,0 +1,6 @@
+C:\Users\user\source\repos\fastLPI decompile tool\bin\Debug\fastLPI decompile tool.dll
+C:\Users\user\source\repos\fastLPI decompile tool\bin\Debug\fastLPI decompile tool.pdb
+C:\Users\user\source\repos\fastLPI decompile tool\obj\Debug\fastLPI decompile tool.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\fastLPI decompile tool\obj\Debug\fastLPI decompile tool.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\fastLPI decompile tool\obj\Debug\fastLPI decompile tool.dll
+C:\Users\user\source\repos\fastLPI decompile tool\obj\Debug\fastLPI decompile tool.pdb
