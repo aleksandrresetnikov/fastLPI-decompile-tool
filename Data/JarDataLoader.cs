@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
+
 using fastLPI.tools.decompiler.helper;
+using fastLPI.tools.decompiler.data.building;
 
 namespace fastLPI.tools.decompiler.data
 {
@@ -14,12 +12,21 @@ namespace fastLPI.tools.decompiler.data
     {
         public static readonly string JavaExecutorProgram = "java";
 
+        /// <summary>
+        /// The exit code of the .jar file data loading process.
+        /// </summary>
         public int JarDataLoaderProcess_ExitCode 
         { get; private protected set; }
 
+        /// <summary>
+        /// Path to the output .xml file.
+        /// </summary>
         public string JarDataLoaderProcess_ExitXmlResultPath
         { get; private protected set; }
 
+        /// <summary>
+        /// Xml document .jar file.
+        /// </summary>
         public virtual JarFile Document
         { get; private protected set; }
 
@@ -37,7 +44,9 @@ namespace fastLPI.tools.decompiler.data
         private protected Queue<DataReceivedEventArgs> JarDataLoaderProcess_OutputData = new Queue<DataReceivedEventArgs>();
         private protected Queue<DataReceivedEventArgs> JarDataLoaderProcess_ErrorData = new Queue<DataReceivedEventArgs>();
 
+        private protected JarFileItemsBuilder ItemsBuilder;
         private protected JarDocumentLoadingPropertiesBuilder LoadingPropertiesBuilder;
+        private protected JarDocumentPropertiesBuilder PropertiesBuilder;
 
         public JarDataLoader(string FilePath)
         {
@@ -52,6 +61,16 @@ namespace fastLPI.tools.decompiler.data
         {
             this.FilePath = FilePath;
             this.JarPath = JarPath;
+
+            this.InitJarDataLoaderProcess();
+            this.InitJarDataLoaderProcessSetting();
+        }
+
+        public JarDataLoader(string FilePath, string JarPath, bool JarDataLoaderProcess_CreateNoWindow)
+        {
+            this.FilePath = FilePath;
+            this.JarPath = JarPath;
+            this.JarDataLoaderProcess_CreateNoWindow = JarDataLoaderProcess_CreateNoWindow;
 
             this.InitJarDataLoaderProcess();
             this.InitJarDataLoaderProcessSetting();
@@ -95,8 +114,28 @@ namespace fastLPI.tools.decompiler.data
             this.LoadingPropertiesBuilder = new JarDocumentLoadingPropertiesBuilder
                 (this.XmlFile);
 
+            this.ItemsBuilder = new JarFileItemsBuilder
+                (this.XmlFile);
+
+            this.PropertiesBuilder = new JarDocumentPropertiesBuilder
+                (this.XmlFile, this.LoadingPropertiesBuilder.Build());
+
+            BuildDocument();
+        }
+        private protected virtual void BuildDocument()
+        {
+            //JarDocumentPropertiesBuilder
             this.Document = new JarFile(this.JarDataLoaderProcess_ExitXmlResultPath,
-                this.LoadingPropertiesBuilder.Build());
+                this.LoadingPropertiesBuilder.Build(), this.ItemsBuilder.BuildChildItems(),
+                this.PropertiesBuilder.BuildDocumentProperties());
+        }
+
+        public virtual void PrintInfo()
+        {
+            Console.WriteLine(this.Document.DocumentLoadingProperties.JarFileName);
+            Console.WriteLine(this.Document.DocumentLoadingProperties.InputPath);
+            Console.WriteLine(this.Document.DocumentLoadingProperties.OutputPath);
+            Console.WriteLine(this.Document.DocumentLoadingProperties.SaveTime);
         }
 
         public void SaveXmlResultTo(string path)
@@ -113,252 +152,5 @@ namespace fastLPI.tools.decompiler.data
             }
             catch (Exception ex) { }
         }
-    }
-
-    public class JarDocumentLoadingPropertiesBuilder
-    {
-        /// <summary>
-        /// Xml file.
-        /// </summary>
-        public XElement XmlFile
-        { get; private protected set; }
-
-        public JarDocumentLoadingPropertiesBuilder(XElement XmlFile)
-        {
-            this.XmlFile = XmlFile;
-        }
-
-        public JarDocumentLoadingProperties Build()
-        {
-            try
-            {
-                if (this.XmlFile.IsContainName("_____LPI_DATA_SAVING_SAVE_PROPERTIES_____"))
-                {
-
-                    return new JarDocumentLoadingProperties
-                    {
-                        SaveTime = Convert.ToInt64(this.XmlFile.GetItemFromName("SavingTime").Attribute("value")),
-                    };
-                }
-                else
-                {
-                    throw new JarDocumentLoadingPropertiesException();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new JarDocumentLoadingPropertiesException(ex.Message);
-            }
-        }
-    }
-
-    public static class XElementContainerHelper
-    {
-        public static bool IsContainName(this XElement XmlElement, string ItemName)
-        {
-            foreach (XElement item in XmlElement.Elements())
-                if (item.Name == ItemName)
-                    return true;
-
-            return false;
-        }
-
-        public static XElement GetItemFromName(this XElement XmlElement, string ItemName)
-        {
-            foreach (XElement item in XmlElement.Elements())
-                if (item.Name == ItemName)
-                    return item;
-
-            return null;
-        }
-    }
-
-    public class JarDocumentLoadingPropertiesException : Exception
-    {
-        public override string Message => "Error constructing a new instance of the JarDocumentLoadingProperties class.";
-
-        public JarDocumentLoadingPropertiesException() :
-            base()
-        { }
-
-        public JarDocumentLoadingPropertiesException(string message) :
-            base(message)
-        { }
-
-        public JarDocumentLoadingPropertiesException(string message, Exception innerException) :
-            base(message, innerException)
-        { }
-        
-        protected JarDocumentLoadingPropertiesException(SerializationInfo info, StreamingContext context) :
-            base(info, context)
-        { }
-    }
-
-    public class JarFile
-    {
-        /// <summary>
-        /// Path to xml file.
-        /// </summary>
-        public string XmlPath
-        { get; private protected set; }
-
-        /// <summary>
-        /// .jar file save properties.
-        /// </summary>
-        public virtual JarDocumentLoadingProperties DocumentProperties
-        { get; private protected set; }
-
-        /// <summary>
-        /// Child items.
-        /// </summary>
-        public Queue<JarDocumentItem> ChildItems
-        { get; set; }
-
-        public JarFile(string XmlPath, JarDocumentLoadingProperties DocumentProperties)
-        {
-            this.XmlPath = XmlPath;
-            this.DocumentProperties = DocumentProperties;
-        }
-    }
-
-    public class JarDocumentLoadingProperties
-    {
-        /// <summary>
-        /// .jar file data saving time.
-        /// </summary>
-        public long SaveTime
-        { get; set; }
-
-        /// <summary>
-        /// .jar file input path.
-        /// </summary>
-        public string InputPath
-        { get; set; }
-
-        /// <summary>
-        /// .jar file output path.
-        /// </summary>
-        public string OutputPath
-        { get; set; }
-    }
-
-    /// <summary>
-    ///  Properties for the jar file (in the form of properties for the jar document).
-    ///  Because data about the .jar file is loaded in the form of a document, this 
-    ///concept will be referred to as "document".
-    /// </summary>
-    public class JarDocumentProperties
-    {
-        /// <summary>
-        /// The name of the .jar document file.
-        /// </summary>
-        public string DocumentName
-        { get; private protected set; }
-
-        /// <summary>
-        /// The size of the .jar document file.
-        /// </summary>
-        public int DocumentSize
-        { get; private protected set; }
-
-        /// <summary>
-        /// The items length of the .jar document file.
-        /// </summary>
-        public int DocumentItemsLength
-        { get; private protected set; }
-
-        /// <summary>
-        /// The items full length (all items) of the .jar document file.
-        /// </summary>
-        public int DocumentItemsFullLength
-        { get; private protected set; }
-    }
-
-    public class JarDocumentItem
-    {
-        /// <summary>
-        /// The path to the item.
-        /// </summary>
-        public string ItemLocationPath
-        { get; private protected set; }
-
-        /// <summary>
-        /// Item name.
-        /// </summary>
-        public string ItemName
-        { get; private protected set; }
-
-        /// <summary>
-        /// Item context.
-        /// </summary>
-        public string ItemContext
-        { get; private protected set; }
-
-        /// <summary>
-        /// Item type.
-        /// </summary>
-        public JarDocumentItemType ItemType
-        { get; private protected set; }
-        /// <summary>
-        /// The item's parent. Null if this is the root element.
-        /// </summary>
-        public JarDocumentItem ParentDocumentItem
-        { get; private protected set; }
-
-        /// <summary>
-        /// Child items.
-        /// </summary>
-        public Queue<JarDocumentItem> ChildItems
-        { get; private protected set; }
-    }
-
-    /// <summary>
-    /// Element types in .jar file.
-    /// 
-    /// Types:
-    ///     1. None - Not defined (default value).
-    ///     2. PackageItem - Package item or folder.
-    ///     3. Class - java class.
-    ///     4. Method - java method.
-    ///     5. Field - java field or variable.
-    ///     6. ClassFile - .class in the jar file.
-    ///     7. Resource - java resource (images, text, json. xml, and more...).
-    /// </summary>
-    public enum JarDocumentItemType
-    {
-        /// <summary>
-        /// None - Not defined (default value).
-        /// </summary>
-        None,
-
-        /// <summary>
-        /// Package item or folder.
-        /// </summary>
-        PackageItem,
-
-        /// <summary>
-        /// java class.
-        /// </summary>
-        Class,
-
-        /// <summary>
-        /// java method.
-        /// </summary>
-        Method,
-
-        /// <summary>
-        /// java field or variable.
-        /// </summary>
-        Field,
-
-        /// <summary>
-        /// .class in the jar file.
-        /// </summary>
-        ClassFile,
-
-        /// <summary>
-        /// java resource (images, text, json. xml, and more...).
-        /// </summary>
-        Resource
     }
 }
