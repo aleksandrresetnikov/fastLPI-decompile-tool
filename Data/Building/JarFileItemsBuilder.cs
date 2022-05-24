@@ -33,7 +33,9 @@ namespace fastLPI.tools.decompiler.data.building
                 SubItem.SetParentDocumentItem(ParentDocumentItem);
                 SubItem.SetChildItems(GetSubItems(subItem, tab + ElementBuilder.ItemContext + "\\", SubItem));
 
-                ElementBuilder.PrintItemLocationPath();
+                //ElementBuilder.PrintItemLocationPath();
+
+                OutputValue.Enqueue(SubItem);
             }
 
             return OutputValue;
