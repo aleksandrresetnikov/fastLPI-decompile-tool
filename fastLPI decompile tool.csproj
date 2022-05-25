@@ -48,7 +48,7 @@
     <Compile Include="Analyzer\JavaClassType.cs" />
     <Compile Include="Analyzer\Method.cs" />
     <Compile Include="Analyzer\MethodUtil.cs" />
-    <Compile Include="Data\Analysis\JarDataAnalyzer.cs" />
+    <Compile Include="Data\Building\JarDocumentItemTypeBuilder.cs" />
     <Compile Include="Data\Building\JarDocumentPropertiesBuilder.cs" />
     <Compile Include="Data\Building\JarElementBuilder.cs" />
     <Compile Include="Data\Building\JarFileItemsBuilder.cs" />
@@ -68,6 +68,7 @@
     <Compile Include="Data\JarDocumentLoadingPropertiesException.cs" />
     <Compile Include="Data\JarDocumentProperties.cs" />
     <Compile Include="Data\JarFile.cs" />
+    <Compile Include="Data\Patterns.cs" />
     <Compile Include="Data\XElementContainerUtil.cs" />
     <Compile Include="DecompilerProperties.cs" />
     <Compile Include="Enums.cs" />

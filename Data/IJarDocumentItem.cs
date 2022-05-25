@@ -9,5 +9,6 @@ namespace fastLPI.tools.decompiler.data
         void SetItemContext(string ItemContext);
         void SetParentDocumentItem(JarDocumentItem ParentDocumentItem);
         void SetChildItems(Queue<JarDocumentItem> ChildItems);
+        void SetItemType(JarDocumentItemType ItemType);
     }
 }

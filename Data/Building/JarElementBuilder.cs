@@ -58,7 +58,7 @@ namespace fastLPI.tools.decompiler.data.building
         public virtual JarDocumentItem BuildItem()
         {
             return new JarDocumentItem(this.ItemName,
-                this.ItemLocationPath, this.ItemContext);
+                this.ItemLocationPath, this.ItemContext, this.PathTab);
         }
 
         public virtual void PrintItemLocationPath()

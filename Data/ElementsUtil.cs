@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Xml.Linq;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace fastLPI.tools.decompiler.helper
 {
@@ -47,6 +48,15 @@ namespace fastLPI.tools.decompiler.helper
                 outValue += item.GetDocumentItemsFullLength();
 
             return outValue;
+        }
+
+        public static bool IsClass(this string Context)
+        {
+            foreach (char c in Context)
+                if (!Regex.IsMatch(c.ToString(), "\\w"))
+                    return false;
+
+            return true;
         }
     }
 }

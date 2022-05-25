@@ -124,8 +124,9 @@ namespace fastLPI.tools.decompiler.data
         }
         private protected virtual void BuildDocument()
         {
+            JarDocumentLoadingProperties DocumentLoadingProperties = this.LoadingPropertiesBuilder.Build();
             this.Document = new JarFile(this.JarDataLoaderProcess_ExitXmlResultPath,
-                this.LoadingPropertiesBuilder.Build(), this.ItemsBuilder.BuildChildItems(),
+                DocumentLoadingProperties, this.ItemsBuilder.BuildChildItems(),
                 this.PropertiesBuilder.BuildDocumentProperties());
         }
 

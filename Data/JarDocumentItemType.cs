@@ -47,6 +47,16 @@
         /// <summary>
         /// java resource (images, text, json. xml, and more...).
         /// </summary>
-        Resource
+        Resource,
+
+        /// <summary>
+        /// java class constructor.
+        /// </summary>
+        Constructor,
+
+        /// <summary>
+        /// Definition error
+        /// </summary>
+        Error
     }
 }

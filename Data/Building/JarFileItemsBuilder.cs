@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
+using System.Collections.Generic;
+
+using fastLPI.tools.decompiler.helper;
 
 namespace fastLPI.tools.decompiler.data.building
 {
@@ -27,9 +29,13 @@ namespace fastLPI.tools.decompiler.data.building
 
             foreach (XElement subItem in item.Elements())
             {
+                if (subItem.Name == JarDocumentLoadingPropertiesBuilder.LpiDataSavingPropertiesItemName) continue;
+
                 JarElementBuilder ElementBuilder = new JarElementBuilder(subItem, tab);
                 JarDocumentItem SubItem = ElementBuilder.BuildItem();
+                JarDocumentItemTypeBuilder DocumentItemTypeBuilder = new JarDocumentItemTypeBuilder(SubItem, ParentDocumentItem);
 
+                SubItem.SetItemType(DocumentItemTypeBuilder.BuildItemType());
                 SubItem.SetParentDocumentItem(ParentDocumentItem);
                 SubItem.SetChildItems(GetSubItems(subItem, tab + ElementBuilder.ItemContext + "\\", SubItem));
 

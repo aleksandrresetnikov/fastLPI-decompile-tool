@@ -23,6 +23,12 @@ namespace fastLPI.tools.decompiler.data
         { get; private protected set; }
 
         /// <summary>
+        /// Item type.
+        /// </summary>
+        public JarDocumentItemType ItemType
+        { get; private protected set; }
+
+        /// <summary>
         /// The item's parent. Null if this is the root element.
         /// </summary>
         public JarDocumentItem ParentDocumentItem
@@ -32,6 +38,12 @@ namespace fastLPI.tools.decompiler.data
         /// Child items.
         /// </summary>
         public Queue<JarDocumentItem> ChildItems
+        { get; private protected set; }
+
+        /// <summary>
+        /// Child items.
+        /// </summary>
+        public string TabPath
         { get; private protected set; }
 
         public JarDocumentItem(string ItemName)
@@ -52,12 +64,32 @@ namespace fastLPI.tools.decompiler.data
             this.ItemContext = ItemContext;
         }
 
-        public JarDocumentItem(string ItemName, string ItemLocationPath, string ItemContext, JarDocumentItem ParentDocumentItem)
+        public JarDocumentItem(string ItemName, string ItemLocationPath, string ItemContext, 
+            string TabPath)
+        {
+            this.ItemName = ItemName;
+            this.ItemLocationPath = ItemLocationPath;
+            this.ItemContext = ItemContext;
+            this.TabPath = TabPath;
+        }
+
+        public JarDocumentItem(string ItemName, string ItemLocationPath, string ItemContext, 
+            JarDocumentItem ParentDocumentItem)
         {
             this.ItemName = ItemName;
             this.ItemLocationPath = ItemLocationPath;
             this.ItemContext = ItemContext;
             this.ParentDocumentItem = ParentDocumentItem;
+        }
+
+        public JarDocumentItem(string ItemName, string ItemLocationPath, string ItemContext, 
+            JarDocumentItem ParentDocumentItem, string TabPath)
+        {
+            this.ItemName = ItemName;
+            this.ItemLocationPath = ItemLocationPath;
+            this.ItemContext = ItemContext;
+            this.ParentDocumentItem = ParentDocumentItem;
+            this.TabPath = TabPath;
         }
 
         #region IJarDocumentItem
@@ -84,6 +116,11 @@ namespace fastLPI.tools.decompiler.data
         public void SetChildItems(Queue<JarDocumentItem> ChildItems)
         {
             this.ChildItems = ChildItems;
+        }
+
+        public void SetItemType(JarDocumentItemType ItemType)
+        {
+            this.ItemType = ItemType;
         }
         #endregion
 
