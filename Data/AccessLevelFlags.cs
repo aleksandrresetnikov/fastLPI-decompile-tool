@@ -1,4 +1,11 @@
-﻿namespace fastLPI.tools.decompiler.data
+﻿// Missing :
+//  1.StaticClass - ???
+//  2.PublicStaticClass - ???
+//  3.FinalStaticClass - ???
+//  ...
+// Will be done on 05/27/2022
+
+namespace fastLPI.tools.decompiler.data
 {
     /// <summary>
     /// Access levels in java.
@@ -398,6 +405,6 @@
         /// <summary>
         /// Error !
         /// </summary>
-        Error = 1025
+        Error/* = 1025*/
     }
 }

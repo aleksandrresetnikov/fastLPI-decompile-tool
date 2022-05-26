@@ -45,8 +45,9 @@ namespace fastLPI.tools.decompiler.data.digest
         public void PrintDigest()
         {
             foreach (JarDocumentItem item in this.GetDigest())
-                if (item.ItemType == JarDocumentItemType.Field)
-                Console.WriteLine($"Name: {item.ItemName/*item.ItemLocationPath*/}; "/* +
+                if (item.ItemType == JarDocumentItemType.Class)
+                Console.WriteLine($"Name: {item.ItemName/*item.ItemLocationPath*/}; " +
+                    $"Access level: {item.AccessLevel}"/* +
                     $"Type: {item.ItemType.ToString()}; " +
                     $"Type parent: {(item.ParentDocumentItem != null ? item.ParentDocumentItem.ItemType.ToString() : "Root")};"*/);
         }
