@@ -48,6 +48,9 @@
     <Compile Include="Analyzer\JavaClassType.cs" />
     <Compile Include="Analyzer\Method.cs" />
     <Compile Include="Analyzer\MethodUtil.cs" />
+    <Compile Include="Data\AccessLevelFlags.cs" />
+    <Compile Include="Data\AccessLevelManager.cs" />
+    <Compile Include="Data\Building\AccessLevelBuilder.cs" />
     <Compile Include="Data\Building\JarDocumentItemTypeBuilder.cs" />
     <Compile Include="Data\Building\JarDocumentPropertiesBuilder.cs" />
     <Compile Include="Data\Building\JarElementBuilder.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="Data\Digest\IDigestPrinter.cs" />
     <Compile Include="Data\Digest\JarFileDigest.cs" />
     <Compile Include="Data\ElementsUtil.cs" />
+    <Compile Include="Data\IAccessLevelManager.cs" />
     <Compile Include="Data\IJarDataLoader.cs" />
     <Compile Include="Data\IJarDocumentItem.cs" />
     <Compile Include="Data\IJarFile.cs" />

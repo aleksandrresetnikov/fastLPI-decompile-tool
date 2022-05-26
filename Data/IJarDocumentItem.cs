@@ -10,5 +10,6 @@ namespace fastLPI.tools.decompiler.data
         void SetParentDocumentItem(JarDocumentItem ParentDocumentItem);
         void SetChildItems(Queue<JarDocumentItem> ChildItems);
         void SetItemType(JarDocumentItemType ItemType);
+        void SetAccessLevel(AccessLevelFlags AccessLevel);
     }
 }

@@ -46,6 +46,12 @@ namespace fastLPI.tools.decompiler.data
         public string TabPath
         { get; private protected set; }
 
+        /// <summary>
+        /// Item access level.
+        /// </summary>
+        public AccessLevelFlags AccessLevel
+        { get; private protected set; }
+
         public JarDocumentItem(string ItemName)
         {
             this.ItemName = ItemName;
@@ -121,6 +127,11 @@ namespace fastLPI.tools.decompiler.data
         public void SetItemType(JarDocumentItemType ItemType)
         {
             this.ItemType = ItemType;
+        }
+
+        public void SetAccessLevel(AccessLevelFlags AccessLevel)
+        {
+            this.AccessLevel = AccessLevel;
         }
         #endregion
 
