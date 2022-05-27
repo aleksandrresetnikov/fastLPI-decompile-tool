@@ -69,5 +69,29 @@ namespace fastLPI.tools.decompiler.helper
 
             return outValue.RemoveSpaces();
         }
+
+        public static string GetDumpDate() => $"[{DateTime.Now.ToString()}] - ";
+        public static string GetNewDumpName(string name, string path)
+        {
+            int value = 1;
+
+            string newName = name;
+            while (true)
+            {
+                newName = name + GetFixNum(value);
+                if (!new System.IO.FileInfo(path + $@"\{newName}.log").Exists) break;
+                value++;
+            }
+
+            return newName;
+        }
+        public static string GetFixNum(int num)
+        {
+            if (num < 10) return $"000{num}";
+            else if (num < 100) return $"00{num}";
+            else if (num < 1000) return $"0{num}";
+            else if (num < 10000) return $"{num}";
+            else return num.ToString();
+        }
     }
 }

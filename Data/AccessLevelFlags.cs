@@ -1,11 +1,4 @@
-﻿// Missing :
-//  1.StaticClass - ???
-//  2.PublicStaticClass - ???
-//  3.FinalStaticClass - ???
-//  ...
-// Will be done on 05/27/2022
-
-namespace fastLPI.tools.decompiler.data
+﻿namespace fastLPI.tools.decompiler.data
 {
     /// <summary>
     /// Access levels in java.
@@ -185,7 +178,7 @@ namespace fastLPI.tools.decompiler.data
         /// <summary>
         /// java::protected fina params
         /// </summary>
-        ProtectedFinaParams = 148,
+        ProtectedFinalParams = 148,
 
         /// <summary>
         /// java::protected static final params
@@ -381,6 +374,16 @@ namespace fastLPI.tools.decompiler.data
         /// java::public class
         /// </summary>
         PublicClass = 33,
+
+        /// <summary>
+        /// java::final class
+        /// </summary>
+        FinalClass = 48,
+
+        /// <summary>
+        /// java::public final class
+        /// </summary>
+        PublicFinalClass = 49,
 
         /// <summary>
         /// java::enum

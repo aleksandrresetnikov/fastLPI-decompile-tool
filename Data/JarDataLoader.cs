@@ -5,6 +5,7 @@ using System.Xml.Linq;
 
 using fastLPI.tools.decompiler.helper;
 using fastLPI.tools.decompiler.data.building;
+using fastLPI.tools.decompiler.diagnostics;
 
 namespace fastLPI.tools.decompiler.data
 {
@@ -102,11 +103,23 @@ namespace fastLPI.tools.decompiler.data
 
         public void Load()
         {
-            this.JarDataLoaderProcess.Start();
-            this.JarDataLoaderProcess.WaitForExit();
-            this.JarDataLoaderProcess_ExitCode = this.JarDataLoaderProcess.ExitCode;
-            this.JarDataLoaderProcess_ExitXmlResultPath = this.FilePath + "-data.xml";
-            this.XmlFile = XElement.Load(this.JarDataLoaderProcess_ExitXmlResultPath);
+            try
+            {
+                this.JarDataLoaderProcess.Start();
+                this.JarDataLoaderProcess.WaitForExit();
+                this.JarDataLoaderProcess_ExitCode = this.JarDataLoaderProcess.ExitCode;
+                this.JarDataLoaderProcess_ExitXmlResultPath = this.FilePath + "-data.xml";
+                this.XmlFile = XElement.Load(this.JarDataLoaderProcess_ExitXmlResultPath);
+            }
+            catch (Exception ex)
+            {
+                Dump.AddDump("JarDocumentAccessLevelBuilder",
+                    "\n\n\tJarDocumentAccessLevelBuilder\\BuildAccessLevel" +
+                    "\nXmlItem::Value = " + this.XmlFile.Value +
+                    "\nXmlItem::BaseUri = " + this.XmlFile.BaseUri +
+                    "\nJarDataLoaderProcess_ExitXmlResultPath = " + this.JarDataLoaderProcess_ExitXmlResultPath +
+                    "\n\tStackTrace: \n" + ex.StackTrace, true);
+            }
         }
 
         public virtual void LoadJarDataContentFromXmlResult()

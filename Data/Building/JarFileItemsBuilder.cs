@@ -1,8 +1,6 @@
 ﻿using System.Xml.Linq;
 using System.Collections.Generic;
 
-using fastLPI.tools.decompiler.helper;
-
 namespace fastLPI.tools.decompiler.data.building
 {
     public class JarFileItemsBuilder

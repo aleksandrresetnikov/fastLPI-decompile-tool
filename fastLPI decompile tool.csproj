@@ -50,7 +50,7 @@
     <Compile Include="Analyzer\MethodUtil.cs" />
     <Compile Include="Data\AccessLevelFlags.cs" />
     <Compile Include="Data\AccessLevelManager.cs" />
-    <Compile Include="Data\Building\AccessLevelBuilder.cs" />
+    <Compile Include="Data\Building\JarDocumentAccessLevelBuilder.cs" />
     <Compile Include="Data\Building\JarDocumentItemTypeBuilder.cs" />
     <Compile Include="Data\Building\JarDocumentPropertiesBuilder.cs" />
     <Compile Include="Data\Building\JarElementBuilder.cs" />
@@ -75,6 +75,9 @@
     <Compile Include="Data\Patterns.cs" />
     <Compile Include="Data\XElementContainerUtil.cs" />
     <Compile Include="DecompilerProperties.cs" />
+    <Compile Include="Diagnostics\Dump.cs" />
+    <Compile Include="Diagnostics\DumpEventArgs.cs" />
+    <Compile Include="Diagnostics\LPI_Libs_Remastering_Dump.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="IDecompilerProperties.cs" />
     <Compile Include="IJavaDecompiler.cs" />

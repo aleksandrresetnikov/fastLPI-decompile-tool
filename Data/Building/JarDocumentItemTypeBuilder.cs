@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
 
-using fastLPI.tools.decompiler;
 using fastLPI.tools.decompiler.helper;
+using fastLPI.tools.decompiler.diagnostics;
 
 namespace fastLPI.tools.decompiler.data.building
 {
@@ -42,7 +38,7 @@ namespace fastLPI.tools.decompiler.data.building
                 if (val.IsClassFile())
                     return JarDocumentItemType.ClassFile;
 
-                else if (Regex.IsMatch(val, Patterns.MethodPattern) && this.ParentItem != null && 
+                else if (Regex.IsMatch(val, Patterns.MethodPattern) && this.ParentItem != null &&
                     this.ParentItem.ItemType == JarDocumentItemType.Class)
                     return JarDocumentItemType.Method;
 
@@ -66,10 +62,16 @@ namespace fastLPI.tools.decompiler.data.building
             }
             catch (Exception ex)
             {
-                File.AppendAllText("ExceptionsDump.log", $"\n\n{this.Item.ItemContext}\nStackTrace: {ex.StackTrace}");
+                Dump.AddDump("JarDocumentItemTypeBuilder",
+                    "\n\n\tJarDocumentItemTypeBuilder\\BuildItemType" +
+                    "\nItem::ItemName = " + this.Item.ItemName +
+                    "\nItem::ItemContext = " + this.Item.ItemContext +
+                    "\nItem::ItemLocationPath = " + this.Item.ItemLocationPath +
+                    "\nItem::TabPath = " + (this.Item.TabPath != null ? this.Item.TabPath : "Root") +
+                    "\n\tStackTrace: \n" + ex.StackTrace, true);
                 return JarDocumentItemType.Error;
             }
-        }//.class
+        }
 
         private string GetParentItemType()
         {

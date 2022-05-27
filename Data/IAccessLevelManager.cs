@@ -9,5 +9,9 @@
         bool IsPublic();
         bool IsPrivate();
         bool IsProtected();
+        bool IsClass();
+        bool IsEnum();
+        bool IsInterface();
+        bool IsAnnotation();
     }
 }
