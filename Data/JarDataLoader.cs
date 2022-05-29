@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Xml.Linq;
+using System.IO;
 
 using fastLPI.tools.decompiler.helper;
 using fastLPI.tools.decompiler.data.building;
@@ -113,8 +114,8 @@ namespace fastLPI.tools.decompiler.data
             }
             catch (Exception ex)
             {
-                Dump.AddDump("JarDocumentAccessLevelBuilder",
-                    "\n\n\tJarDocumentAccessLevelBuilder\\BuildAccessLevel" +
+                Dump.AddDump("JarDataLoader",
+                    "\n\n\tJarDataLoader\\Load" +
                     "\nXmlItem::Value = " + this.XmlFile.Value +
                     "\nXmlItem::BaseUri = " + this.XmlFile.BaseUri +
                     "\nJarDataLoaderProcess_ExitXmlResultPath = " + this.JarDataLoaderProcess_ExitXmlResultPath +
@@ -153,7 +154,19 @@ namespace fastLPI.tools.decompiler.data
 
         public void SaveXmlResultTo(string path)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (File.Exists(this.JarDataLoaderProcess_ExitXmlResultPath) && !File.Exists(path))
+                    File.Copy(this.JarDataLoaderProcess_ExitXmlResultPath, path);
+            }
+            catch (Exception ex) 
+            {
+                Dump.AddDump("JarDataLoader",
+                    "\n\n\tJarDataLoader\\SaveXmlResultTo" +
+                    "\nJarDataLoaderProcess_ExitXmlResultPath = " + this.JarDataLoaderProcess_ExitXmlResultPath +
+                    "\npath = " + path +
+                    "\n\tStackTrace: \n" + ex.StackTrace, true);
+            }
         }
 
         public void Dispose()
@@ -163,7 +176,12 @@ namespace fastLPI.tools.decompiler.data
                 GC.SuppressFinalize((object)this);
                 GC.Collect();
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                Dump.AddDump("JarDataLoader",
+                    "\n\n\tJarDataLoader\\Dispose" +
+                    "\n\tStackTrace: \n" + ex.StackTrace, true);
+            }
         }
     }
 }
