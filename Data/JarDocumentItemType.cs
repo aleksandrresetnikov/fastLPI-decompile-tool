@@ -12,6 +12,7 @@
     ///     6. ClassFile - .class in the jar file.
     ///     7. Resource - java resource (images, text, json. xml, and more...).
     /// </summary>
+    [System.Serializable()]
     public enum JarDocumentItemType
     {
         /// <summary>

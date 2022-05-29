@@ -66,6 +66,14 @@
     <Compile Include="Data\IJarFile.cs" />
     <Compile Include="Data\IChildItemsQueueChanges.cs" />
     <Compile Include="Data\JarDataLoader.cs" />
+    <Compile Include="Data\Saving\ICreateJarDataInstance.cs" />
+    <Compile Include="Data\Saving\IJarDataInstance.cs" />
+    <Compile Include="Data\Saving\IJarDataInstanceProperties.cs" />
+    <Compile Include="Data\Saving\IJarDataLoadManager.cs" />
+    <Compile Include="Data\Saving\JarDataInstance.cs" />
+    <Compile Include="Data\Saving\JarDataInstanceProperties.cs" />
+    <Compile Include="Data\Saving\JarDataLoadManager.cs" />
+    <Compile Include="Data\Saving\JarDataSavingManager.cs" />
     <Compile Include="Data\JarDocumentItemType.cs" />
     <Compile Include="Data\JarDocumentLoadingProperties.cs" />
     <Compile Include="Data\Building\JarDocumentLoadingPropertiesBuilder.cs" />
@@ -73,6 +81,11 @@
     <Compile Include="Data\JarDocumentProperties.cs" />
     <Compile Include="Data\JarFile.cs" />
     <Compile Include="Data\Patterns.cs" />
+    <Compile Include="Data\Saving\SavingUtil.cs" />
+    <Compile Include="Data\Serialization\BinJarDataSerialization.cs" />
+    <Compile Include="Data\Serialization\IJarDataSerialization.cs" />
+    <Compile Include="Data\Serialization\XmlJarDataSerialization.cs" />
+    <Compile Include="Data\Serialization\SerializationType.cs" />
     <Compile Include="Data\XElementContainerUtil.cs" />
     <Compile Include="DecompilerProperties.cs" />
     <Compile Include="Diagnostics\Dump.cs" />
@@ -96,5 +109,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

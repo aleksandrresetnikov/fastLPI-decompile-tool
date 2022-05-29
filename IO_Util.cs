@@ -34,8 +34,10 @@ namespace fastLPI.tools.decompiler
                 }
                 return state;
             }
-            catch (Exception e)
+            catch (Exception)
             { return false; }
         }
+
+        public static string RemoveExtension(this string path) => Path.ChangeExtension(path, null);
     }
 }

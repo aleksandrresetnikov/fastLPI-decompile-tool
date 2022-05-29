@@ -7,10 +7,11 @@ using System.IO;
 using fastLPI.tools.decompiler.helper;
 using fastLPI.tools.decompiler.data.building;
 using fastLPI.tools.decompiler.diagnostics;
+using fastLPI.tools.decompiler.data.saving;
 
 namespace fastLPI.tools.decompiler.data
 {
-    public class JarDataLoader : IJarDataLoader, IDisposable
+    public class JarDataLoader : IJarDataLoader, IDisposable, ICreateJarDataInstance
     {
         public static readonly string JavaExecutorProgram = "java";
 
@@ -182,6 +183,16 @@ namespace fastLPI.tools.decompiler.data
                     "\n\n\tJarDataLoader\\Dispose" +
                     "\n\tStackTrace: \n" + ex.StackTrace, true);
             }
+        }
+
+        public JarDataInstance CreateInstance()
+        {
+            return new JarDataInstance(this.Document, this.CreateInstanceProperties());
+        }
+
+        public JarDataInstanceProperties CreateInstanceProperties()
+        {
+            return new JarDataInstanceProperties(this.FilePath, this.JarDataLoaderProcess_ExitXmlResultPath);
         }
     }
 }

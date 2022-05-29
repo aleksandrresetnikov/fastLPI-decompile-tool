@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using fastLPI.tools.decompiler.diagnostics;
 
 namespace fastLPI.tools.decompiler.data
 {
-    [Serializable]
-    public class JarFile : IJarFile, IChildItemsQueueChanges
+    [Serializable()]
+    public class JarFile : IJarFile, IChildItemsQueueChanges, IDisposable
     {
         /// <summary>
         /// Path to xml file.
@@ -126,5 +127,21 @@ namespace fastLPI.tools.decompiler.data
             this.ChildItems.TrimExcess();
         }
         #endregion
+
+        public void Dispose()
+        {
+            try
+            {
+                //this.Document
+                GC.SuppressFinalize((object)this);
+                GC.Collect();
+            }
+            catch (Exception ex)
+            {
+                Dump.AddDump("JarFile",
+                    "\n\n\tJarFile\\Dispose" +
+                    "\n\tStackTrace: \n" + ex.StackTrace, true);
+            }
+        }
     }
 }

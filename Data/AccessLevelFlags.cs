@@ -3,6 +3,7 @@
     /// <summary>
     /// Access levels in java.
     /// </summary>
+    [System.Serializable()]
     public enum AccessLevelFlags
     {
         /// <summary>
