@@ -14,4 +14,6 @@ The jd-cli decompiler has an outputZipFile command that takes the value of the o
 I started developing a java source code analyzer to determine which packages, classes, methods are in the library.
 
 ## New:
-JarDataLoader - loading data about jar file from xml file.
+1. JarDataLoader - loading data about jar file from xml file.
+2. IJarDataSerialization - Interface for jar data serialization (implements: BinJarDataSerialization and XmlJarDataSerialization).
+3. JarDataInstance - Information about an instance of the JarFile class for its further saving as a file.
