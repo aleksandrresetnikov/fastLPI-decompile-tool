@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace fastLPI.tools.decompiler.data
 {
+    [Serializable]
     public class JarDocumentItem : IJarDocumentItem, IChildItemsQueueChanges
     {
         /// <summary>
