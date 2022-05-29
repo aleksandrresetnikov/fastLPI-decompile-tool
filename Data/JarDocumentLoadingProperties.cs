@@ -1,5 +1,8 @@
-﻿namespace fastLPI.tools.decompiler.data
+﻿using System;
+
+namespace fastLPI.tools.decompiler.data
 {
+    [Serializable]
     public class JarDocumentLoadingProperties
     {
         /// <summary>
