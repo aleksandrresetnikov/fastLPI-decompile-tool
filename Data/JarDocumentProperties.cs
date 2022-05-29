@@ -1,10 +1,13 @@
-﻿namespace fastLPI.tools.decompiler.data
+﻿using System;
+
+namespace fastLPI.tools.decompiler.data
 {
     /// <summary>
     ///  Properties for the jar file (in the form of properties for the jar document).
     ///  Because data about the .jar file is loaded in the form of a document, this 
     ///concept will be referred to as "document".
     /// </summary>
+    [Serializable]
     public class JarDocumentProperties
     {
         /// <summary>
