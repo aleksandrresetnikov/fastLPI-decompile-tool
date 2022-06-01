@@ -34,7 +34,7 @@ namespace fastLPI.tools.decompiler.data.serialization
 
         public void Save(JarDataInstance DataInstance)
         {
-            new Thread(() => {
+            //new Thread(() => {
                 using (Stream stream = new FileStream(DataInstance.Properties.OutputDataFileResultPath, FileMode.Create))
                 {
                     IFormatter formatter = new BinaryFormatter();
@@ -44,7 +44,7 @@ namespace fastLPI.tools.decompiler.data.serialization
                 }
 
                 GC.Collect();
-            }).Start();
+            //}).Start();
         }
         #endregion
     }

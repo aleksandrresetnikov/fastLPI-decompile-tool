@@ -33,7 +33,7 @@ namespace fastLPI.tools.decompiler.data.building
             try
             {
                 string val = this.Item.ItemContext;
-                Console.WriteLine($"#{Step++}: {val}; Parent item type: {GetParentItemType()}");
+                //Console.WriteLine($"#{Step++}: {val}; Parent item type: {GetParentItemType()}");
 
                 if (val.IsClassFile())
                     return JarDocumentItemType.ClassFile;

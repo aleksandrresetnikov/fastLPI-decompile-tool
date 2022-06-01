@@ -26,7 +26,7 @@ namespace fastLPI.tools.decompiler.data.saving
         {
             this.FilePath = FilePath;
             this.OutputXmlFileResultPath = OutputXmlFileResultPath;
-            this.OutputDataFileResultPath = this.GetDefaultOutputDataFileResultPath();
+            this.OutputDataFileResultPath = GetDefaultOutputDataFileResultPath();
         }
 
         public JarDataInstanceProperties(string FilePath, string OutputXmlFileResultPath, string OutputDataFileResultPath)

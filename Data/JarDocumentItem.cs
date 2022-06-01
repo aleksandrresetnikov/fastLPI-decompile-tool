@@ -53,6 +53,12 @@ namespace fastLPI.tools.decompiler.data
         public AccessLevelFlags AccessLevel
         { get; private protected set; }
 
+        /// <summary>
+        /// Item package.
+        /// </summary>
+        public string Package
+        { get; private protected set; }
+
         public JarDocumentItem(string ItemName)
         {
             this.ItemName = ItemName;
@@ -80,6 +86,16 @@ namespace fastLPI.tools.decompiler.data
             this.TabPath = TabPath;
         }
 
+        public JarDocumentItem(string ItemName, string ItemLocationPath, string ItemContext,
+            string TabPath, string Package)
+        {
+            this.ItemName = ItemName;
+            this.ItemLocationPath = ItemLocationPath;
+            this.ItemContext = ItemContext;
+            this.TabPath = TabPath;
+            this.Package = Package;
+        }
+
         public JarDocumentItem(string ItemName, string ItemLocationPath, string ItemContext, 
             JarDocumentItem ParentDocumentItem)
         {
@@ -97,6 +113,17 @@ namespace fastLPI.tools.decompiler.data
             this.ItemContext = ItemContext;
             this.ParentDocumentItem = ParentDocumentItem;
             this.TabPath = TabPath;
+        }
+
+        public JarDocumentItem(string ItemName, string ItemLocationPath, string ItemContext,
+            JarDocumentItem ParentDocumentItem, string TabPath, string Package)
+        {
+            this.ItemName = ItemName;
+            this.ItemLocationPath = ItemLocationPath;
+            this.ItemContext = ItemContext;
+            this.ParentDocumentItem = ParentDocumentItem;
+            this.TabPath = TabPath;
+            this.Package = Package;
         }
 
         #region IJarDocumentItem
@@ -133,6 +160,23 @@ namespace fastLPI.tools.decompiler.data
         public void SetAccessLevel(AccessLevelFlags AccessLevel)
         {
             this.AccessLevel = AccessLevel;
+        }
+
+        public void SetPackage(string Package)
+        {
+            this.Package = Package;
+        }
+
+        public string GetSubackage()
+        {
+            if (this.ParentDocumentItem == null)
+                return "#none";
+            return this.ParentDocumentItem.Package;
+        }
+
+        public string GetFullName()
+        {
+            return $"{this.Package}.{GetSubFullName(this)}";
         }
         #endregion
 
@@ -180,6 +224,16 @@ namespace fastLPI.tools.decompiler.data
         public void ChildItemsTrimExcess()
         {
             this.ChildItems.TrimExcess();
+        }
+        #endregion
+
+        #region helper
+        private static string GetSubFullName(JarDocumentItem item)
+        {
+            if (item.ParentDocumentItem != null && item.ParentDocumentItem.ItemType == JarDocumentItemType.Class)
+                return $"{GetSubFullName(item.ParentDocumentItem)}.{item.ItemName}";
+            else
+                return item.ItemName;
         }
         #endregion
     }

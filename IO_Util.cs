@@ -39,5 +39,11 @@ namespace fastLPI.tools.decompiler
         }
 
         public static string RemoveExtension(this string path) => Path.ChangeExtension(path, null);
+
+        public static bool IsFile(this string path) =>
+            new FileInfo(path).Exists;
+
+        public static bool IsDirectory(this string path) =>
+            new DirectoryInfo(path).Exists;
     }
 }

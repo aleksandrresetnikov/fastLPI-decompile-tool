@@ -82,10 +82,11 @@ namespace fastLPI.tools.decompiler.data
         private protected void InitJarDataLoaderProcess()
         {
             this.JarDataLoaderProcess = new Process();
-            this.JarDataLoaderProcess.OutputDataReceived += this.JarDataLoaderProcess_OutputDataReceived;
-            this.JarDataLoaderProcess.ErrorDataReceived += this.JarDataLoaderProcess_ErrorDataReceived;
             this.JarDataLoaderProcess.StartInfo.UseShellExecute = false;
             this.JarDataLoaderProcess.StartInfo.RedirectStandardOutput = true;
+
+            this.JarDataLoaderProcess.OutputDataReceived += this.JarDataLoaderProcess_OutputDataReceived;
+            this.JarDataLoaderProcess.ErrorDataReceived += this.JarDataLoaderProcess_ErrorDataReceived;
         }
         private protected void InitJarDataLoaderProcessSetting()
         {
@@ -103,7 +104,7 @@ namespace fastLPI.tools.decompiler.data
             this.JarDataLoaderProcess_ErrorData.Enqueue(e);
         }
 
-        public void Load()
+        public virtual void Load()
         {
             try
             {

@@ -32,12 +32,14 @@ namespace fastLPI.tools.decompiler.data.building
                 JarElementBuilder ElementBuilder = new JarElementBuilder(subItem, tab);
                 JarDocumentItem SubItem = ElementBuilder.BuildItem();
                 JarDocumentItemTypeBuilder DocumentItemTypeBuilder = new JarDocumentItemTypeBuilder(SubItem, ParentDocumentItem);
+                JarDocumentItemPackageBuilder DocumentItemPackageBuilder = new JarDocumentItemPackageBuilder(SubItem, ParentDocumentItem);
                 JarDocumentAccessLevelBuilder DocumentAccessLevelBuilder = new JarDocumentAccessLevelBuilder(subItem);
 
                 SubItem.SetItemType(DocumentItemTypeBuilder.BuildItemType());
                 SubItem.SetParentDocumentItem(ParentDocumentItem);
                 SubItem.SetChildItems(GetSubItems(subItem, tab + ElementBuilder.ItemContext + "\\", SubItem));
                 SubItem.SetAccessLevel(DocumentAccessLevelBuilder.BuildAccessLevel());
+                SubItem.SetPackage(DocumentItemPackageBuilder.BuildPackage());
 
                 //ElementBuilder.PrintItemLocationPath();
 
