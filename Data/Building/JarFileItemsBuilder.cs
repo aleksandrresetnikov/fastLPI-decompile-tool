@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System;
+using System.Xml.Linq;
 using System.Collections.Generic;
 
 namespace fastLPI.tools.decompiler.data.building
@@ -21,6 +22,7 @@ namespace fastLPI.tools.decompiler.data.building
             return this.GetSubItems(this.XmlFile);
         }
 
+        uint step = 0;
         private protected virtual Queue<JarDocumentItem> GetSubItems(XElement item, string tab = "", JarDocumentItem ParentDocumentItem = null)
         {
             Queue<JarDocumentItem> OutputValue = new Queue<JarDocumentItem>();
@@ -41,6 +43,7 @@ namespace fastLPI.tools.decompiler.data.building
                 SubItem.SetAccessLevel(DocumentAccessLevelBuilder.BuildAccessLevel());
                 SubItem.SetPackage(DocumentItemPackageBuilder.BuildPackage());
 
+                //Console.WriteLine($"#{++step} - {SubItem.GetFullName()}");
                 //ElementBuilder.PrintItemLocationPath();
 
                 OutputValue.Enqueue(SubItem);

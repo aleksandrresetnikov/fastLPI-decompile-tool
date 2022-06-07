@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace fastLPI.tools.decompiler.data.digest
 {
-    public class JarFileDigest : Digest<JarDocumentItem>, IDigestPrinter
+    public class JarFileDigest : Digest<JarDocumentItem>, IDigestPrinter, IJarFileDigestGeneralAnalyzer
     {
         private Queue<JarDocumentItem> QueueCollection;
 
@@ -45,12 +45,55 @@ namespace fastLPI.tools.decompiler.data.digest
         public void PrintDigest()
         {
             foreach (JarDocumentItem item in this.GetDigest())
-                //if (item.ItemType == JarDocumentItemType.None)
+                if (item.ItemType == JarDocumentItemType.PackageItem)
                 Console.WriteLine($"Name: {/*item.ItemName*//*item.ItemLocationPath*/item.GetFullName()}; " +
                     $"Access level: {item.AccessLevel}; " +
                     $"Package: {item.Package}; "/* +
                     $"Type: {item.ItemType.ToString()}; " +
                     $"Type parent: {(item.ParentDocumentItem != null ? item.ParentDocumentItem.ItemType.ToString() : "Root")};"*/);
+        }
+
+        #region IJarFileDigestGeneralAnalyzer
+        public Queue<JarDocumentItem> GetClasses()
+        {
+            return GetFilterItems(JarDocumentItemType.Class);
+        }
+
+        public Queue<JarDocumentItem> GetMethods()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Queue<JarDocumentItem> GetClassFiles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Queue<JarDocumentItem> GetConstructors()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Queue<JarDocumentItem> GetFields()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Queue<JarDocumentItem> GetPackageItems()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        private Queue<JarDocumentItem> GetFilterItems(JarDocumentItemType filter)
+        {
+            Queue<JarDocumentItem> outputValue = new Queue<JarDocumentItem>();
+
+            foreach (JarDocumentItem item in this.GetDigest())
+                if (item.ItemType == filter)
+                    outputValue.Enqueue(item);
+
+            return outputValue;
         }
     }
 }

@@ -153,7 +153,6 @@ namespace fastLPI.tools.decompiler.data
             Console.WriteLine(this.Document.DocumentLoadingProperties.OutputPath);
             Console.WriteLine(this.Document.DocumentLoadingProperties.SaveTime);
         }
-
         public void SaveXmlResultTo(string path)
         {
             try
