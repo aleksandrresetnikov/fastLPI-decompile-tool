@@ -47,11 +47,40 @@ namespace fastLPI.tools.decompiler.data
         public string TabPath
         { get; private protected set; }
 
+        private protected AccessLevelFlags _AccessLevel;
         /// <summary>
         /// Item access level.
         /// </summary>
         public AccessLevelFlags AccessLevel
-        { get; private protected set; }
+        { 
+            get 
+            {
+                return this._AccessLevel;
+            } 
+            private protected set
+            {
+                this._AccessLevel = value;
+                this.AccessLevelManager = new AccessLevelManager(this._AccessLevel);
+            }
+        }
+
+        private protected AccessLevelManager _AccessLevelManager;
+        /// <summary>
+        /// Item access level helper manager.
+        /// </summary>
+        public AccessLevelManager AccessLevelManager
+        {
+            get
+            {
+                if (this._AccessLevelManager == null) 
+                    this._AccessLevelManager = new AccessLevelManager(this._AccessLevel);
+                return this._AccessLevelManager;
+            }
+            private protected set
+            {
+                this._AccessLevelManager = value;
+            } 
+        }
 
         /// <summary>
         /// Item package.

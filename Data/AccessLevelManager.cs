@@ -1,5 +1,6 @@
 ﻿namespace fastLPI.tools.decompiler.data
 {
+    [System.Serializable]
     public class AccessLevelManager : IAccessLevelManager
     {
         public virtual AccessLevelFlags AccessLevel
