@@ -17,4 +17,4 @@ I started developing a java source code analyzer to determine which packages, cl
 1. JarDataLoader - loading data about jar file from xml file.
 2. IJarDataSerialization - Interface for jar data serialization (implements: BinJarDataSerialization and XmlJarDataSerialization).
 3. JarDataInstance - Information about an instance of the JarFile class for its further saving as a file.
-4. AccessLevelManager - Quick actions with item access level
+4. AccessLevelManager - Quick actions with item access level.
