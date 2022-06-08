@@ -2,6 +2,6 @@
 {
     public interface IDigestPrinter
     {
-        void PrintDigest();
+        void PrintDigest(JarDocumentItemType filter = JarDocumentItemType.Method);
     }
 }

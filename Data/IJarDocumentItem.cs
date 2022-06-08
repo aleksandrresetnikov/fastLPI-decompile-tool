@@ -14,5 +14,6 @@ namespace fastLPI.tools.decompiler.data
         void SetPackage(string Package);
         string GetSubackage();
         string GetFullName();
+        string GetContactName();
     }
 }

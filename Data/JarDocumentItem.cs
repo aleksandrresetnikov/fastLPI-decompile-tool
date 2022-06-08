@@ -207,6 +207,11 @@ namespace fastLPI.tools.decompiler.data
         {
             return $"{this.Package}.{GetSubFullName(this)}";
         }
+
+        public string GetContactName()
+        {
+            return $"{GetSubFullName(this)}";
+        }
         #endregion
 
         #region IChildItemsQueueChanges
