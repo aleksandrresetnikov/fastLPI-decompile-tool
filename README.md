@@ -11,8 +11,11 @@ I found a very handy <a href="https://github.com/intoolswetrust/jd-cli">jd-cli u
 The jd-cli decompiler has an outputZipFile command that takes the value of the output zip path, and in the dictionary this command will be given as "-oz".
 
 ## Usage the code analysis: 
-### <a>Here are the code analysis files</a> for fastLPI-decompile-tool-example (based on <a href="https://github.com/java-decompiler/jd-gui">jd-gui</a>).
+### <a href="https://github.com/aleksandrresetnikov/fastLPI-decompile-tool/blob/main/Files/jd-gui-forLPI/jd-gui-forLPI.jar">Here are the code analysis files</a> for fastLPI-decompile-tool-example (based on <a href="https://github.com/java-decompiler/jd-gui">jd-gui</a>).
 
+Usage: <strong>jd-gui-forLPI </strong>\<path to jar file\> - Next to the selected jar file (in the same folder) an xml document will be created with the contents of this jar file (classes, fields, motods and their access level). Next, you can connect the fastLPI-decompile-tool library to your C Sharp project, and use it to find out the entire contents of the jar, as well as the access level of classes, motods, fields, etc. You can also find interfaces, enumerations, etc.
+
+### You can download the jd-gui-forLPI source <a href="https://github.com/aleksandrresetnikov/fastLPI-decompile-tool/blob/main/Files/jd-gui-forLPI/source%20code.zip">here</a>.
 
 ## Additionally.
 I started developing a java source code analyzer to determine which packages, classes, methods are in the library.
