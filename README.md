@@ -10,7 +10,9 @@ I found a very handy <a href="https://github.com/intoolswetrust/jd-cli">jd-cli u
 ### For example :
 The jd-cli decompiler has an outputZipFile command that takes the value of the output zip path, and in the dictionary this command will be given as "-oz".
 
-### Great example:
+## Usage the code analysis: 
+### <a>Here are the code analysis files</a> for fastLPI-decompile-tool-example (based on <a href="https://github.com/java-decompiler/jd-gui">jd-gui</a>).
+
 
 ## Additionally.
 I started developing a java source code analyzer to determine which packages, classes, methods are in the library.
