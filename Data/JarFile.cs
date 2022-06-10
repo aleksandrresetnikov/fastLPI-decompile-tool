@@ -32,6 +32,14 @@ namespace fastLPI.tools.decompiler.data
         public JarDocumentProperties DocumentProperties
         { get; private protected set; }
 
+        /// <summary>
+        /// Document packages data.
+        /// </summary>
+        public PackageCollector PackageCollector
+        { get; private protected set; }
+
+        public bool SuppressFinalizeWhenDispose = true;
+
         public JarFile(string XmlPath)
         {
             this.XmlPath = XmlPath;
@@ -50,6 +58,23 @@ namespace fastLPI.tools.decompiler.data
             this.ChildItems = ChildItems;
         }
 
+        public JarFile(string XmlPath, JarDocumentLoadingProperties DocumentProperties, JarDocumentProperties JarDocumentProperties)
+        {
+            this.XmlPath = XmlPath;
+            this.DocumentLoadingProperties = DocumentProperties;
+            this.ChildItems = ChildItems;
+            this.DocumentProperties = JarDocumentProperties;
+        }
+
+        public JarFile(string XmlPath, JarDocumentLoadingProperties DocumentProperties, Queue<JarDocumentItem> ChildItems,
+            PackageCollector PackageCollector)
+        {
+            this.XmlPath = XmlPath;
+            this.DocumentLoadingProperties = DocumentProperties;
+            this.ChildItems = ChildItems;
+            this.PackageCollector = PackageCollector;
+        }
+
         public JarFile(string XmlPath, JarDocumentLoadingProperties DocumentProperties, Queue<JarDocumentItem> ChildItems,
             JarDocumentProperties JarDocumentProperties)
         {
@@ -57,6 +82,16 @@ namespace fastLPI.tools.decompiler.data
             this.DocumentLoadingProperties = DocumentProperties;
             this.ChildItems = ChildItems;
             this.DocumentProperties = JarDocumentProperties;
+        }
+
+        public JarFile(string XmlPath, JarDocumentLoadingProperties DocumentProperties, Queue<JarDocumentItem> ChildItems,
+            JarDocumentProperties JarDocumentProperties, PackageCollector PackageCollector)
+        {
+            this.XmlPath = XmlPath;
+            this.DocumentLoadingProperties = DocumentProperties;
+            this.ChildItems = ChildItems;
+            this.DocumentProperties = JarDocumentProperties;
+            this.PackageCollector = PackageCollector;
         }
 
         #region IJarFile
@@ -78,6 +113,11 @@ namespace fastLPI.tools.decompiler.data
         public void SetJarDocumentProperties(JarDocumentProperties JarDocumentProperties)
         {
             this.DocumentProperties = JarDocumentProperties;
+        }
+
+        public void SetPackageCollector(PackageCollector PackageCollector)
+        {
+            this.PackageCollector = PackageCollector;
         }
         #endregion
 
@@ -132,8 +172,8 @@ namespace fastLPI.tools.decompiler.data
         {
             try
             {
-                //this.Document
-                GC.SuppressFinalize((object)this);
+                if (this.SuppressFinalizeWhenDispose)
+                    GC.SuppressFinalize((object)this);
                 GC.Collect();
             }
             catch (Exception ex)

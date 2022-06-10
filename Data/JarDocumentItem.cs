@@ -269,6 +269,11 @@ namespace fastLPI.tools.decompiler.data
             else
                 return item.ItemName;
         }
+
+        public override string ToString()
+        {
+            return this.ItemName;
+        }
         #endregion
     }
 }

@@ -54,7 +54,7 @@ namespace fastLPI.tools.decompiler.data.building
                     this.ParentItem.ItemType == JarDocumentItemType.Class) && val.IsClass())
                     return JarDocumentItemType.Class;
 
-                else if (new FileInfo(val).Exists)
+                else if (val.Contains("."))
                     return JarDocumentItemType.Resource;
 
                 else

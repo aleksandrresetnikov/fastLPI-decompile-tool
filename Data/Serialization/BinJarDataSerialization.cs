@@ -34,6 +34,8 @@ namespace fastLPI.tools.decompiler.data.serialization
 
         public void Save(JarDataInstance DataInstance)
         {
+            CheckCasheDataDir(new FileInfo(DataInstance.Properties.OutputDataFileResultPath).Directory.FullName);
+
             //new Thread(() => {
                 using (Stream stream = new FileStream(DataInstance.Properties.OutputDataFileResultPath, FileMode.Create))
                 {
@@ -47,5 +49,11 @@ namespace fastLPI.tools.decompiler.data.serialization
             //}).Start();
         }
         #endregion
+
+        private static void CheckCasheDataDir(string path)
+        {
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+        }
     }
 }

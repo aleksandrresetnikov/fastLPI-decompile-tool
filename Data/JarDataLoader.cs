@@ -8,6 +8,7 @@ using fastLPI.tools.decompiler.helper;
 using fastLPI.tools.decompiler.data.building;
 using fastLPI.tools.decompiler.diagnostics;
 using fastLPI.tools.decompiler.data.saving;
+using fastLPI.tools.decompiler.data.digest;
 
 namespace fastLPI.tools.decompiler.data
 {
@@ -50,6 +51,7 @@ namespace fastLPI.tools.decompiler.data
         private protected JarFileItemsBuilder ItemsBuilder;
         private protected JarDocumentLoadingPropertiesBuilder LoadingPropertiesBuilder;
         private protected JarDocumentPropertiesBuilder PropertiesBuilder;
+        private protected JarDocumentPackagesBuilder PackagesBuilder;
 
         public JarDataLoader(string FilePath)
         {
@@ -141,9 +143,13 @@ namespace fastLPI.tools.decompiler.data
         private protected virtual void BuildDocument()
         {
             JarDocumentLoadingProperties DocumentLoadingProperties = this.LoadingPropertiesBuilder.Build();
+
             this.Document = new JarFile(this.JarDataLoaderProcess_ExitXmlResultPath,
                 DocumentLoadingProperties, this.ItemsBuilder.BuildChildItems(),
                 this.PropertiesBuilder.BuildDocumentProperties());
+
+            this.PackagesBuilder = new JarDocumentPackagesBuilder(new JarFileDigest(this.Document.ChildItems));
+            this.Document.SetPackageCollector(this.PackagesBuilder.BuildPackages());
         }
 
         public virtual void PrintInfo()

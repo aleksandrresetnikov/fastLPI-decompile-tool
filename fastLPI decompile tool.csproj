@@ -53,6 +53,7 @@
     <Compile Include="Data\Building\JarDataFromXmlLoader.cs" />
     <Compile Include="Data\Building\JarDocumentAccessLevelBuilder.cs" />
     <Compile Include="Data\Building\JarDocumentItemTypeBuilder.cs" />
+    <Compile Include="Data\Building\JarDocumentPackagesBuilder.cs" />
     <Compile Include="Data\Building\JarDocumentPropertiesBuilder.cs" />
     <Compile Include="Data\Building\JarElementBuilder.cs" />
     <Compile Include="Data\Building\JarFileItemsBuilder.cs" />
@@ -69,7 +70,11 @@
     <Compile Include="Data\IJarDocumentItem.cs" />
     <Compile Include="Data\IJarFile.cs" />
     <Compile Include="Data\IChildItemsQueueChanges.cs" />
+    <Compile Include="Data\IPackage.cs" />
+    <Compile Include="Data\IPackageCollector.cs" />
     <Compile Include="Data\JarDataLoader.cs" />
+    <Compile Include="Data\Package.cs" />
+    <Compile Include="Data\PackageCollector.cs" />
     <Compile Include="Data\Saving\ICreateJarDataInstance.cs" />
     <Compile Include="Data\Saving\IJarDataInstance.cs" />
     <Compile Include="Data\Saving\IJarDataInstanceProperties.cs" />

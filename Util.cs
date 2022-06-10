@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using fastLPI.tools.decompiler.analytics;
+using fastLPI.tools.decompiler.data;
 
 namespace fastLPI.tools.decompiler.helper
 {
@@ -85,6 +86,7 @@ namespace fastLPI.tools.decompiler.helper
 
             return newName;
         }
+
         public static string GetFixNum(int num)
         {
             if (num < 10) return $"000{num}";

@@ -17,14 +17,20 @@ namespace fastLPI.tools.decompiler.data.digest
             : base(QueueJarFileCollection) =>
             this.QueueCollection = QueueJarFileCollection;
 
-        public override IEnumerable<JarDocumentItem> GetDigest() =>
-            this.MakeDigest(this.QueueCollection);
+        public override IEnumerable<JarDocumentItem> GetDigest()
+        {
+            return this.MakeDigest(this.QueueCollection);
+        }
 
-        public override IEnumerable<JarDocumentItem> GetEnumerable() =>
-            this.QueueCollection;
+        public override IEnumerable<JarDocumentItem> GetEnumerable()
+        {
+            return this.QueueCollection;
+        }
 
-        public override void SetEnumerable(IEnumerable<JarDocumentItem> Collection) =>
+        public override void SetEnumerable(IEnumerable<JarDocumentItem> Collection)
+        {
             this.QueueCollection = (Collection as Queue<JarDocumentItem>);
+        }
 
         protected virtual Queue<JarDocumentItem> MakeDigest(Queue<JarDocumentItem> QueueCollection)
         {

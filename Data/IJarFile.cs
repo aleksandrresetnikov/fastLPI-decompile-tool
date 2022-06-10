@@ -8,5 +8,6 @@ namespace fastLPI.tools.decompiler.data
         void SetDocumentProperties(JarDocumentLoadingProperties DocumentProperties);
         void SetChildItems(Queue<JarDocumentItem> ChildItems);
         void SetJarDocumentProperties(JarDocumentProperties JarDocumentProperties);
+        void SetPackageCollector(PackageCollector PackageCollector);
     }
 }
