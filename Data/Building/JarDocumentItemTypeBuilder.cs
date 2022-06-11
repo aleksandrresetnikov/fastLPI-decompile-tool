@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -21,10 +21,24 @@ namespace fastLPI.tools.decompiler.data.building
         public JarDocumentItem ParentItem
         { get; set; }
 
+        /// <summary>
+        /// Are there child elements
+        /// </summary>
+        public bool ChildElementsPresent
+        { get; set; }
+
         public JarDocumentItemTypeBuilder(JarDocumentItem Item, JarDocumentItem ParentItem)
         {
             this.Item = Item;
             this.ParentItem = ParentItem;
+            this.ChildElementsPresent = false;
+        }
+
+        public JarDocumentItemTypeBuilder(JarDocumentItem Item, JarDocumentItem ParentItem, bool ChildElementsPresent)
+        {
+            this.Item = Item;
+            this.ParentItem = ParentItem;
+            this.ChildElementsPresent = ChildElementsPresent;
         }
 
         static int Step = 0;
@@ -33,7 +47,7 @@ namespace fastLPI.tools.decompiler.data.building
             try
             {
                 string val = this.Item.ItemContext;
-                //Console.WriteLine($"#{Step++}: {val}; Parent item type: {GetParentItemType()}");
+                Console.WriteLine($"#{Step++}: {val}; Parent item type: {GetParentItemType()}");
 
                 if (val.IsClassFile())
                     return JarDocumentItemType.ClassFile;
@@ -54,7 +68,7 @@ namespace fastLPI.tools.decompiler.data.building
                     this.ParentItem.ItemType == JarDocumentItemType.Class) && val.IsClass())
                     return JarDocumentItemType.Class;
 
-                else if (val.Contains("."))
+                else if (val.Contains(".") && !ChildElementsPresent)
                     return JarDocumentItemType.Resource;
 
                 else

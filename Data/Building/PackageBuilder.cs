@@ -55,7 +55,7 @@ namespace fastLPI.tools.decompiler.data.building
                 outputValue += item.Name;
             }
 
-            return outputValue.Remove(outputValue.Length - 1, 1);
+            return outputValue.Length > 0 ? outputValue.Remove(outputValue.Length - 1, 1) : outputValue;
         }
     }
 

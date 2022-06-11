@@ -48,13 +48,14 @@ namespace fastLPI.tools.decompiler.data.digest
             return OutputValue;
         }
 
-        public void PrintDigest(JarDocumentItemType filter = JarDocumentItemType.Method)
+        public void PrintDigest(JarDocumentItemType filter = JarDocumentItemType.Class)
         {
             foreach (JarDocumentItem item in this.GetDigest())
                 if (item.ItemType == filter)
                 Console.WriteLine($"Name: {/*item.ItemName*//*item.ItemLocationPath*//*item.GetFullName()*/item.GetContactName()}; " +
+                    $"Location path: {item.ItemLocationPath}"/* +
                     $"Access level: {item.AccessLevel}; " +
-                    $"Package: {item.Package}; "/* +
+                    $"Package: {item.Package}; " +
                     $"Type: {item.ItemType.ToString()}; " +
                     $"Type parent: {(item.ParentDocumentItem != null ? item.ParentDocumentItem.ItemType.ToString() : "Root")};"*/);
         }

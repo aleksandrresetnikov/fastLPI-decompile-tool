@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Xml.Linq;
 using System.Collections.Generic;
 
@@ -25,6 +26,8 @@ namespace fastLPI.tools.decompiler.data.building
         uint step = 0;
         private protected virtual Queue<JarDocumentItem> GetSubItems(XElement item, string tab = "", JarDocumentItem ParentDocumentItem = null)
         {
+            //tab = tab.Replace(".", "\\");
+
             Queue<JarDocumentItem> OutputValue = new Queue<JarDocumentItem>();
 
             foreach (XElement subItem in item.Elements())
@@ -33,7 +36,7 @@ namespace fastLPI.tools.decompiler.data.building
 
                 JarElementBuilder ElementBuilder = new JarElementBuilder(subItem, tab);
                 JarDocumentItem SubItem = ElementBuilder.BuildItem();
-                JarDocumentItemTypeBuilder DocumentItemTypeBuilder = new JarDocumentItemTypeBuilder(SubItem, ParentDocumentItem);
+                JarDocumentItemTypeBuilder DocumentItemTypeBuilder = new JarDocumentItemTypeBuilder(SubItem, ParentDocumentItem, item.Elements().Count() > 1);
                 JarDocumentItemPackageBuilder DocumentItemPackageBuilder = new JarDocumentItemPackageBuilder(SubItem, ParentDocumentItem);
                 JarDocumentAccessLevelBuilder DocumentAccessLevelBuilder = new JarDocumentAccessLevelBuilder(subItem);
 
