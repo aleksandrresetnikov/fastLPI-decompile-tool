@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -33,21 +33,21 @@ namespace fastLPI.tools.decompiler.data.building
             try
             {
                 string val = this.Item.ItemContext;
-                //Console.WriteLine($"#{Step++}: {val}; Parent item type: {GetParentItemType()}");
+                Console.WriteLine($"#{Step++}: {val}; Parent item type: {GetParentItemType()}");
 
                 if (val.IsClassFile())
                     return JarDocumentItemType.ClassFile;
 
-                else if (Regex.IsMatch(val, Patterns.MethodPattern) && this.ParentItem != null &&
-                    this.ParentItem.ItemType == JarDocumentItemType.Class)
+                else if (val.Contains("(") && val.Contains(")") && Regex.IsMatch(val, Patterns.MethodPattern) && 
+                    this.ParentItem != null && this.ParentItem.ItemType == JarDocumentItemType.Class)
                     return JarDocumentItemType.Method;
 
                 else if (Regex.IsMatch(val, Patterns.FieldPattern) && this.ParentItem != null &&
                     this.ParentItem.ItemType == JarDocumentItemType.Class)
                     return JarDocumentItemType.Field;
 
-                else if (Regex.IsMatch(val, Patterns.ConstructorPattern) && this.ParentItem != null &&
-                    this.ParentItem.ItemType == JarDocumentItemType.Class)
+                else if (val.Contains("(") && val.Contains(")") && Regex.IsMatch(val, Patterns.ConstructorPattern) && 
+                    this.ParentItem != null && this.ParentItem.ItemType == JarDocumentItemType.Class)
                     return JarDocumentItemType.Constructor;
 
                 else if (this.ParentItem != null && (this.ParentItem.ItemType == JarDocumentItemType.ClassFile ||
