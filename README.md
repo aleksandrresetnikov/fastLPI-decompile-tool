@@ -35,4 +35,5 @@ I started developing a java source code analyzer to determine which packages, cl
 4. AccessLevelManager - Quick actions with item access level.
 
 ## ✅Corrected:
-1. 
+1. Resource definition among jar content.
+2. Regex-related slow loading of data.
