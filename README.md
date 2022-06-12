@@ -37,3 +37,4 @@ I started developing a java source code analyzer to determine which packages, cl
 ## ✅Corrected:
 1. Resource definition among jar content.
 2. Regex-related slow loading of data.
+3. Slowdown when determining the element type.
