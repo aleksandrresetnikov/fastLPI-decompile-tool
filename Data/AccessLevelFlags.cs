@@ -1,4 +1,4 @@
-﻿namespace fastLPI.tools.decompiler.data
+namespace fastLPI.tools.decompiler.data
 {
     /// <summary>
     /// Access levels in java.
@@ -412,663 +412,643 @@
         Error,/* = 1025*/
 
         /// <summary>
-        /// java::
+        /// java::synchronized
         /// </summary>
-        NoneSynchronized = 32,
+        Synchronized = 32,
 
         /// <summary>
-        /// java::
+        /// java::static synchronized
         /// </summary>
-        NoneStaticSynchronized = 40,
+        StaticSynchronized = 40,
 
         /// <summary>
-        /// java::
+        /// java::final synchronized
         /// </summary>
-        NoneFinalSynchronized = 48,
+        FinalSynchronized = 48,
 
         /// <summary>
-        /// java::
+        /// java::static final synchronized
         /// </summary>
-        NoneStaticFinalSynchronized = 56,
+        StaticFinalSynchronized = 56,
 
         /// <summary>
-        /// java::
+        /// java::public synchronized
         /// </summary>
         PublicSynchronized = 33,
 
         /// <summary>
-        /// java::
+        /// java::public static synchronized
         /// </summary>
         PublicStaticSynchronized = 41,
 
         /// <summary>
-        /// java::
+        /// java::private synchronized
         /// </summary>
         PrivateSynchronized = 34,
 
         /// <summary>
-        /// java::
+        /// java::private static synchronized
         /// </summary>
         PrivateStaticSynchronized = 42,
 
         /// <summary>
-        /// java::
+        /// java::protected synchronized
         /// </summary>
         ProtectedSynchronized = 36,
 
         /// <summary>
-        /// java::
+        /// java::protected static synchronized
         /// </summary>
         ProtectedStaticSynchronized = 44,
 
         /// <summary>
-        /// java::
+        /// java::public final synchronized
         /// </summary>
         PublicFinalSynchronized = 49,
 
         /// <summary>
-        /// java::
+        /// java::public static final synchronized
         /// </summary>
         PublicStaticFinalSynchronized = 57,
 
         /// <summary>
-        /// java::
+        /// java::private final synchronized
         /// </summary>
         PrivateFinalSynchronized = 50,
 
         /// <summary>
-        /// java::
+        /// java::private static final synchronized
         /// </summary>
         PrivateStaticFinalSynchronized = 58,
 
         /// <summary>
-        /// java::
+        /// java::protected final synchronized
         /// </summary>
         ProtectedFinalSynchronized = 52,
 
         /// <summary>
-        /// java::
+        /// java::protected static final synchronized
         /// </summary>
         ProtectedStaticFinalSynchronized = 60,
 
         /// <summary>
-        /// java::
+        /// java::synchronized params
         /// </summary>
-        NoneSynchronizedParams = 160,
+        SynchronizedParams = 160,
 
         /// <summary>
-        /// java::
+        /// java::static synchronized params
         /// </summary>
-        NoneStaticSynchronizedParams = 168,
+        StaticSynchronizedParams = 168,
 
         /// <summary>
-        /// java::
+        /// java::final synchronized params
         /// </summary>
-        NoneFinalSynchronizedParams = 176,
+        FinalSynchronizedParams = 176,
 
         /// <summary>
-        /// java::
+        /// java::static final synchronized params
         /// </summary>
-        NoneStaticFinalSynchronizedParams = 184,
+        StaticFinalSynchronizedParams = 184,
 
         /// <summary>
-        /// java::
+        /// java::public synchronized params
         /// </summary>
         PublicSynchronizedParams = 161,
 
         /// <summary>
-        /// java::
+        /// java::public static synchronized params
         /// </summary>
         PublicStaticSynchronizedParams = 169,
 
         /// <summary>
-        /// java::
+        /// java::private synchronized params
         /// </summary>
         PrivateSynchronizedParams = 162,
 
         /// <summary>
-        /// java::
+        /// java::private static synchronized params
         /// </summary>
         PrivateStaticSynchronizedParams = 170,
 
         /// <summary>
-        /// java::
+        /// java::protected synchronized params
         /// </summary>
         ProtectedSynchronizedParams = 164,
 
         /// <summary>
-        /// java::
+        /// java::protected static synchronized params
         /// </summary>
         ProtectedStaticSynchronizedParams = 172,
 
         /// <summary>
-        /// java::
+        /// java::public final synchronized params
         /// </summary>
         PublicFinalSynchronizedParams = 177,
 
         /// <summary>
-        /// java::
+        /// java::public static final synchronized params
         /// </summary>
         PublicStaticFinalSynchronizedParams = 185,
 
         /// <summary>
-        /// java::
+        /// java::private final synchronized params
         /// </summary>
         PrivateFinalSynchronizedParams = 178,
 
         /// <summary>
-        /// java::
+        /// java::private static final synchronized params
         /// </summary>
         PrivateStaticFinalSynchronizedParams = 186,
 
         /// <summary>
-        /// java::
+        /// java::protected final synchronized params
         /// </summary>
         ProtectedFinalSynchronizedParams = 180,
 
         /// <summary>
-        /// java::
+        /// java::protected static final synchronized params
         /// </summary>
         ProtectedStaticFinalSynchronizedParams = 188,
 
         /// <summary>
-        /// java::
+        /// java::deprecated synchronized
         /// </summary>
-        NoneDeprecatedSynchronized = 131104,
+        DeprecatedSynchronized = 131104,
 
         /// <summary>
-        /// java::
+        /// java::static deprecated synchronized
         /// </summary>
-        NoneStaticDeprecatedSynchronized = 131112,
+        StaticDeprecatedSynchronized = 131112,
 
         /// <summary>
-        /// java::
+        /// java::final deprecated synchronized
         /// </summary>
-        NoneFinalDeprecatedSynchronized = 131120,
+        FinalDeprecatedSynchronized = 131120,
 
         /// <summary>
-        /// java::
+        /// java::static final deprecated synchronized
         /// </summary>
-        NoneStaticFinalDeprecatedSynchronized = 131128,
+        StaticFinalDeprecatedSynchronized = 131128,
 
         /// <summary>
-        /// java::
+        /// java::public deprecated synchronized
         /// </summary>
         PublicDeprecatedSynchronized = 131105,
 
         /// <summary>
-        /// java::
+        /// java::public static deprecated synchronized
         /// </summary>
         PublicStaticDeprecatedSynchronized = 131113,
 
         /// <summary>
-        /// java::
+        /// java::private deprecated synchronized
         /// </summary>
         PrivateDeprecatedSynchronized = 131106,
 
         /// <summary>
-        /// java::
+        /// java::private static deprecated synchronized
         /// </summary>
         PrivateStaticDeprecatedSynchronized = 131114,
 
         /// <summary>
-        /// java::
+        /// java::protected deprecated synchronized
         /// </summary>
         ProtectedDeprecatedSynchronized = 131108,
 
         /// <summary>
-        /// java::
+        /// java::protected static deprecated synchronized
         /// </summary>
         ProtectedStaticDeprecatedSynchronized = 131116,
 
         /// <summary>
-        /// java::
+        /// java::public final deprecated synchronized
         /// </summary>
         PublicFinalDeprecatedSynchronized = 131121,
 
         /// <summary>
-        /// java::
+        /// java::public static final deprecated synchronized
         /// </summary>
         PublicStaticFinalDeprecatedSynchronized = 131129,
 
         /// <summary>
-        /// java::
+        /// java::private final deprecated synchronized
         /// </summary>
         PrivateFinalDeprecatedSynchronized = 131122,
 
         /// <summary>
-        /// java::
+        /// java::private static final deprecated synchronized
         /// </summary>
         PrivateStaticFinalDeprecatedSynchronized = 131130,
 
         /// <summary>
-        /// java::
+        /// java::protected final deprecated synchronized
         /// </summary>
         ProtectedFinalDeprecatedSynchronized = 131124,
 
         /// <summary>
-        /// java::
+        /// java::protected static final deprecated synchronized
         /// </summary>
         ProtectedStaticFinalDeprecatedSynchronized = 131132,
 
         /// <summary>
-        /// java::
+        /// java::native synchronized
         /// </summary>
-        NativeNoneSynchronized = 288,
+        NativeSynchronized = 288,
 
         /// <summary>
-        /// java::
+        /// java::native static synchronized
         /// </summary>
-        NativeNoneStaticSynchronized = 264,
+        NativeStaticSynchronized = 264,
 
         /// <summary>
-        /// java::
+        /// java::native final synchronized
         /// </summary>
-        NativeNoneFinalSynchronized = 272,
+        NativeFinalSynchronized = 272,
 
         /// <summary>
-        /// java::
+        /// java::native static final synchronized
         /// </summary>
-        NativeNoneStaticFinalSynchronized = 280,
+        NativeStaticFinalSynchronized = 280,
 
         /// <summary>
-        /// java::
+        /// java::native public synchronized
         /// </summary>
         NativePublicSynchronized = 257,
 
         /// <summary>
-        /// java::
+        /// java::native public static synchronized
         /// </summary>
         NativePublicStaticSynchronized = 265,
 
         /// <summary>
-        /// java::
+        /// java::native private synchronized
         /// </summary>
         NativePrivateSynchronized = 258,
 
         /// <summary>
-        /// java::
+        /// java::native private static synchronized
         /// </summary>
         NativePrivateStaticSynchronized = 266,
 
         /// <summary>
-        /// java::
+        /// java::native protected synchronized
         /// </summary>
         NativeProtectedSynchronized = 260,
 
         /// <summary>
-        /// java::
+        /// java::native protected static synchronized
         /// </summary>
         NativeProtectedStaticSynchronized = 268,
 
         /// <summary>
-        /// java::
+        /// java::native public final synchronized
         /// </summary>
         NativePublicFinalSynchronized = 273,
 
         /// <summary>
-        /// java::
+        /// java::native public static final synchronized
         /// </summary>
         NativePublicStaticFinalSynchronized = 281,
 
         /// <summary>
-        /// java::
+        /// java::native private final synchronized
         /// </summary>
         NativePrivateFinalSynchronized = 274,
 
         /// <summary>
-        /// java::
+        /// java::native private static final synchronized
         /// </summary>
         NativePrivateStaticFinalSynchronized = 282,
 
         /// <summary>
-        /// java::
+        /// java::native protected final synchronized
         /// </summary>
         NativeProtectedFinalSynchronized = 276,
 
         /// <summary>
-        /// java::
+        /// java::native protected static final synchronized
         /// </summary>
         NativeProtectedStaticFinalSynchronized = 284,
 
         /// <summary>
-        /// java::
+        /// java::native deprecated
         /// </summary>
-        NativeNoneDeprecated = 131328,
+        NativeDeprecated = 131328,
 
         /// <summary>
-        /// java::
+        /// java::native static deprecated
         /// </summary>
-        NativeNoneStaticDeprecated = 131336,
+        NativeStaticDeprecated = 131336,
 
         /// <summary>
-        /// java::
+        /// java::native final deprecated
         /// </summary>
-        NativeNoneFinalDeprecated = 131344,
+        NativeFinalDeprecated = 131344,
 
         /// <summary>
-        /// java::
+        /// java::native static final deprecated
         /// </summary>
-        NativeNoneStaticFinalDeprecated = 131352,
+        NativeStaticFinalDeprecated = 131352,
 
         /// <summary>
-        /// java::
+        /// java::native public deprecated
         /// </summary>
         NativePublicDeprecated = 131329,
 
         /// <summary>
-        /// java::
+        /// java::native public static deprecated
         /// </summary>
         NativePublicStaticDeprecated = 131337,
 
         /// <summary>
-        /// java::
+        /// java::native private deprecated
         /// </summary>
         NativePrivateDeprecated = 131330,
 
-        /// <summary>
-        /// java::
+        /// <summarynative>
+        /// java::native private static deprecated
         /// </summary>
         NativePrivateStaticDeprecated = 131338,
 
         /// <summary>
-        /// java::
+        /// java::native protected deprecated
         /// </summary>
         NativeProtectedDeprecated = 131332,
 
         /// <summary>
-        /// java::
+        /// java::native protected static deprecated
         /// </summary>
         NativeProtectedStaticDeprecated = 131340,
 
         /// <summary>
-        /// java::
+        /// java::native public final deprecated
         /// </summary>
         NativePublicFinalDeprecated = 131345,
 
         /// <summary>
-        /// java::
+        /// java::native public static final deprecated
         /// </summary>
         NativePublicStaticFinalDeprecated = 131353,
 
         /// <summary>
-        /// java::
+        /// java::native private final deprecated
         /// </summary>
         NativePrivateFinalDeprecated = 131346,
 
         /// <summary>
-        /// java::
+        /// java::native private static final deprecated
         /// </summary>
         NativePrivateStaticFinalDeprecated = 131354,
 
         /// <summary>
-        /// java::
+        /// java::native protected final deprecated
         /// </summary>
         NativeProtectedFinalDeprecated = 131348,
 
         /// <summary>
-        /// java::
+        /// java::native protected static final deprecated
         /// </summary>
         NativeProtectedStaticFinalDeprecated = 131356,
 
         /// <summary>
-        /// java::
+        /// java::native deprecated synchronized
         /// </summary>
-        NativeNoneDeprecatedSynchronized = 131360,
+        NativeDeprecatedSynchronized = 131360,
 
         /// <summary>
-        /// java::
+        /// java::native static deprecated synchronized
         /// </summary>
-        NativeNoneStaticDeprecatedSynchronized = 131368,
+        NativeStaticDeprecatedSynchronized = 131368,
 
         /// <summary>
-        /// java::
+        /// java::native final deprecated synchronized
         /// </summary>
-        NativeNoneFinalDeprecatedSynchronized = 131376,
+        NativeFinalDeprecatedSynchronized = 131376,
 
         /// <summary>
-        /// java::
+        /// java::native static final deprecated synchronized
         /// </summary>
-        NativeNoneStaticFinalDeprecatedSynchronized = 131384,
+        NativeStaticFinalDeprecatedSynchronized = 131384,
 
         /// <summary>
-        /// java::
+        /// java::native public deprecated synchronized
         /// </summary>
         NativePublicDeprecatedSynchronized = 131361,
 
         /// <summary>
-        /// java::
+        /// java::native public static deprecated synchronized
         /// </summary>
         NativePublicStaticDeprecatedSynchronized = 131369,
 
         /// <summary>
-        /// java::
+        /// java::native private deprecated synchronized
         /// </summary>
         NativePrivateDeprecatedSynchronized = 131362,
 
         /// <summary>
-        /// java::
+        /// java::native private static deprecated synchronized
         /// </summary>
         NativePrivateStaticDeprecatedSynchronized = 131370,
 
         /// <summary>
-        /// java::
+        /// java::native protected deprecated synchronized
         /// </summary>
         NativeProtectedDeprecatedSynchronized = 131364,
 
         /// <summary>
-        /// java::
+        /// java::native protected static deprecated synchronized
         /// </summary>
         NativeProtectedStaticDeprecatedSynchronized = 131372,
 
         /// <summary>
-        /// java::
+        /// java::native public final deprecated synchronized
         /// </summary>
         NativePublicFinalDeprecatedSynchronized = 131377,
 
         /// <summary>
-        /// java::
+        /// java::native public static final deprecated synchronized
         /// </summary>
         NativePublicStaticFinalDeprecatedSynchronized = 131385,
 
         /// <summary>
-        /// java::
+        /// java::native private final deprecated synchronized
         /// </summary>
         NativePrivateFinalDeprecatedSynchronized = 131378,
 
         /// <summary>
-        /// java::
+        /// java::native private static final deprecated synchronized
         /// </summary>
         NativePrivateStaticFinalDeprecatedSynchronized = 131386,
 
         /// <summary>
-        /// java::
+        /// java::native protected final deprecated synchronized
         /// </summary>
         NativeProtectedFinalDeprecatedSynchronized = 131380,
 
         /// <summary>
-        /// java::
+        /// java::native protected static final deprecated synchronized
         /// </summary>
         NativeProtectedStaticFinalDeprecatedSynchronized = 131388,
 
         /// <summary>
-        /// java::
+        /// java::native params
         /// </summary>
-        NativeNoneParams = 384,
+        NativeParams = 384,
 
         /// <summary>
-        /// java::
+        /// java::native static params
         /// </summary>
-        NativeNoneStaticParams = 392,
+        NativeStaticParams = 392,
 
         /// <summary>
-        /// java::
+        /// java::native final params
         /// </summary>
-        NativeNoneFinalParams = 400,
+        NativeFinalParams = 400,
 
         /// <summary>
-        /// java::
+        /// java::native static final params
         /// </summary>
-        NativeNoneStaticFinalParams = 408,
+        NativeStaticFinalParams = 408,
 
         /// <summary>
-        /// java::
+        /// java::native public params
         /// </summary>
         NativePublicParams = 385,
 
         /// <summary>
-        /// java::
+        /// java::native public static params
         /// </summary>
         NativePublicStaticParams = 393,
 
         /// <summary>
-        /// java::
+        /// java::native private params
         /// </summary>
         NativePrivateParams = 386,
 
         /// <summary>
-        /// java::
+        /// java::native private static params
         /// </summary>
         NativePrivateStaticParams = 394,
 
         /// <summary>
-        /// java::
+        /// java::native protected params
         /// </summary>
         NativeProtectedParams = 388,
 
         /// <summary>
-        /// java::
+        /// java::native protected static params
         /// </summary>
         NativeProtectedStaticParams = 396,
 
         /// <summary>
-        /// java::
+        /// java::native public final params
         /// </summary>
         NativePublicFinalParams = 401,
 
         /// <summary>
-        /// java::
+        /// java::native public static final params
         /// </summary>
         NativePublicStaticFinalParams = 409,
 
         /// <summary>
-        /// java::
+        /// java::native private final params
         /// </summary>
         NativePrivateFinalParams = 402,
 
         /// <summary>
-        /// java::
+        /// java::native private static final params
         /// </summary>
         NativePrivateStaticFinalParams = 410,
 
         /// <summary>
-        /// java::
+        /// java::native protected final params
         /// </summary>
         NativeProtectedFinalParams = 404,
 
         /// <summary>
-        /// java::
+        /// java::native protected static final params
         /// </summary>
         NativeProtectedStaticFinalParams = 412,
 
         /// <summary>
-        /// java::
+        /// java::native synchronized params
         /// </summary>
-        NativeNoneSynchronizedParams = 416,
+        NativeSynchronizedParams = 416,
 
         /// <summary>
-        /// java::
+        /// java::native static synchronized params
         /// </summary>
-        NativeNoneStaticSynchronizedParams = 392,
+        NativeStaticSynchronizedParams = 392,
 
         /// <summary>
-        /// java::
+        /// java::native final synchronized params
         /// </summary>
-        NativeNoneFinalSynchronizedParams = 400,
+        NativeFinalSynchronizedParams = 400,
 
         /// <summary>
-        /// java::
+        /// java::native static final synchronized params
         /// </summary>
-        NativeNoneStaticFinalSynchronizedParams = 408,
+        NativeStaticFinalSynchronizedParams = 408,
 
         /// <summary>
-        /// java::
+        /// java::native public synchronized params
         /// </summary>
         NativePublicSynchronizedParams = 385,
 
         /// <summary>
-        /// java::
+        /// java::native public static synchronized params
         /// </summary>
         NativePublicStaticSynchronizedParams = 393,
 
         /// <summary>
-        /// java::
+        /// java::native private synchronized params
         /// </summary>
         NativePrivateSynchronizedParams = 386,
 
         /// <summary>
-        /// java::
+        /// java::native private static synchronized params
         /// </summary>
         NativePrivateStaticSynchronizedParams = 394,
 
         /// <summary>
-        /// java::
+        /// java::native protected synchronized params
         /// </summary>
         NativeProtectedSynchronizedParams = 388,
 
         /// <summary>
-        /// java::
+        /// java::native protected static synchronized params
         /// </summary>
         NativeProtectedStaticSynchronizedParams = 396,
 
         /// <summary>
-        /// java::
+        /// java::native public final synchronized params
         /// </summary>
         NativePublicFinalSynchronizedParams = 401,
 
         /// <summary>
-        /// java::
+        /// java::native public static final synchronized params
         /// </summary>
         NativePublicStaticFinalSynchronizedParams = 409,
 
         /// <summary>
-        /// java::
+        /// java::native private final synchronized params
         /// </summary>
         NativePrivateFinalSynchronizedParams = 402,
 
         /// <summary>
-        /// java::
+        /// java::native private static final synchronized params
         /// </summary>
         NativePrivateStaticFinalSynchronizedParams = 410,
 
         /// <summary>
-        /// java::
+        /// java::native protected final synchronized params
         /// </summary>
         NativeProtectedFinalSynchronizedParams = 404,
 
         /// <summary>
-        /// java::
+        /// java::native protected static final synchronized params
         /// </summary>
-        NativeProtectedStaticFinalSynchronizedParams = 412,
-
-        /// <summary>
-        /// java::
-        /// </summary>
-        NoneDeprecated = 131200,
-
-        /// <summary>
-        /// java::
-        /// </summary>
-        NoneStaticDeprecated = 131208,
-
-        /// <summary>
-        /// java::
-        /// </summary>
-        NoneFinalDeprecated = 131216,
-
-        /// <summary>
-        /// java::
-        /// </summary>
-        NoneStaticFinalDeprecated = 131224
+        NativeProtectedStaticFinalSynchronizedParams = 412
     }
 }
