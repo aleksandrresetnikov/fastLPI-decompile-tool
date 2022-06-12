@@ -1,0 +1,302 @@
+~InitConstructor 1
+
+None  0
+NoneStatic  8
+NoneFinal  16
+NoneStaticFinal  24
+Public  1
+PublicStatic  9
+Private  2
+PrivateStatic  10
+Protected  4
+ProtectedStatic  12
+PublicFinal  17
+PublicStaticFinal  25
+PrivateFinal  18
+PrivateStaticFinal  26
+ProtectedFinal  20
+ProtectedStaticFinal  28
+InInterface  1025
+Abstract  1024
+PublicAbstract  1025
+ProtectedAbstract  1028
+
+*
+NoneSynchronized  32
+NoneStaticSynchronized  40
+NoneFinalSynchronized  48
+NoneStaticFinalSynchronized  56
+PublicSynchronized  33
+PublicStaticSynchronized  41
+PrivateSynchronized  34
+PrivateStaticSynchronized  42
+ProtectedSynchronized  36
+ProtectedStaticSynchronized  44
+PublicFinalSynchronized  49
+PublicStaticFinalSynchronized  57
+PrivateFinalSynchronized  50
+PrivateStaticFinalSynchronized  58
+ProtectedFinalSynchronized  52
+ProtectedStaticFinalSynchronized  60
+
+ParamsNone  128
+ParamsNoneStatic  136
+ParamsNoneFinal  144
+ParamsNoneStaticFinal  152
+ParamsPublic  129
+ParamsPublicStatic  137
+ParamsPrivate  130
+ParamsPrivateStatic  138
+ParamsProtected  132
+ParamsProtectedStatic  140
+ParamsPublicFinal  145
+ParamsPublicStaticFinal  153
+ParamsPrivateFinal  146
+ParamsPrivateStaticFinal  154
+ParamsProtectedFinal  148
+ParamsProtectedStaticFinal  156
+
+*
+ParamsNoneSynchronized  160
+ParamsNoneStaticSynchronized  168
+ParamsNoneFinalSynchronized  176
+ParamsNoneStaticFinalSynchronized  184
+ParamsPublicSynchronized  161
+ParamsPublicStaticSynchronized  169
+ParamsPrivateSynchronized  162
+ParamsPrivateStaticSynchronized  170
+ParamsProtectedSynchronized  164
+ParamsProtectedStaticSynchronized  172
+ParamsPublicFinalSynchronized  177
+ParamsPublicStaticFinalSynchronized  185
+ParamsPrivateFinalSynchronized  178
+ParamsPrivateStaticFinalSynchronized  186
+ParamsProtectedFinalSynchronized  180
+ParamsProtectedStaticFinalSynchronized  188
+
+NoneDeprecated  131072
+NoneStaticDeprecated  131080
+NoneFinalDeprecated  131088
+NoneStaticFinalDeprecated  131096
+PublicDeprecated  131073
+PublicStaticDeprecated  131081
+PrivateDeprecated  131074
+PrivateStaticDeprecated  131082
+ProtectedDeprecated  131076
+ProtectedStaticDeprecated  131084
+PublicFinalDeprecated  131089
+PublicStaticFinalDeprecated  131097
+PrivateFinalDeprecated  131090
+PrivateStaticFinalDeprecated  131098
+ProtectedFinalDeprecated  131092
+ProtectedStaticFinalDeprecated  131100
+
+*
+NoneDeprecatedSynchronized  131104
+NoneStaticDeprecatedSynchronized  131112
+NoneFinalDeprecatedSynchronized  131120
+NoneStaticFinalDeprecatedSynchronized  131128
+PublicDeprecatedSynchronized  131105
+PublicStaticDeprecatedSynchronized  131113
+PrivateDeprecatedSynchronized  131106
+PrivateStaticDeprecatedSynchronized  131114
+ProtectedDeprecatedSynchronized  131108
+ProtectedStaticDeprecatedSynchronized  131116
+PublicFinalDeprecatedSynchronized  131121
+PublicStaticFinalDeprecatedSynchronized  131129
+PrivateFinalDeprecatedSynchronized  131122
+PrivateStaticFinalDeprecatedSynchronized  131130
+ProtectedFinalDeprecatedSynchronized  131124
+ProtectedStaticFinalDeprecatedSynchronized  131132
+
+NativeNone  256
+NativeNoneStatic  264
+NativeNoneFinal  272
+NativeNoneStaticFinal  280
+NativePublic  257
+NativePublicStatic  265
+NativePrivate  258
+NativePrivateStatic  266
+NativeProtected  260
+NativeProtectedStatic  268
+NativePublicFinal  273
+NativePublicStaticFinal  281
+NativePrivateFinal  274
+NativePrivateStaticFinal  282
+NativeProtectedFinal  276
+NativeProtectedStaticFinal  284
+
+*
+NativeNoneSynchronized  288
+NativeNoneStaticSynchronized  264
+NativeNoneFinalSynchronized  272
+NativeNoneStaticFinalSynchronized  280
+NativePublicSynchronized  257
+NativePublicStaticSynchronized  265
+NativePrivateSynchronized  258
+NativePrivateStaticSynchronized  266
+NativeProtectedSynchronized  260
+NativeProtectedStaticSynchronized  268
+NativePublicFinalSynchronized  273
+NativePublicStaticFinalSynchronized  281
+NativePrivateFinalSynchronized  274
+NativePrivateStaticFinalSynchronized  282
+NativeProtectedFinalSynchronized  276
+NativeProtectedStaticFinalSynchronized  284
+
+*
+NativeNoneDeprecated  131328
+NativeNoneStaticDeprecated  131336
+NativeNoneFinalDeprecated  131344
+NativeNoneStaticFinalDeprecated  131352
+NativePublicDeprecated  131329
+NativePublicStaticDeprecated  131337
+NativePrivateDeprecated  131330
+NativePrivateStaticDeprecated  131338
+NativeProtectedDeprecated  131332
+NativeProtectedStaticDeprecated  131340
+NativePublicFinalDeprecated  131345
+NativePublicStaticFinalDeprecated  131353
+NativePrivateFinalDeprecated  131346
+NativePrivateStaticFinalDeprecated  131354
+NativeProtectedFinalDeprecated  131348
+NativeProtectedStaticFinalDeprecated  131356
+
+*
+NativeNoneDeprecatedSynchronized  131360
+NativeNoneStaticDeprecatedSynchronized  131368
+NativeNoneFinalDeprecatedSynchronized  131376
+NativeNoneStaticFinalDeprecatedSynchronized  131384
+NativePublicDeprecatedSynchronized  131361
+NativePublicStaticDeprecatedSynchronized  131369
+NativePrivateDeprecatedSynchronized  131362
+NativePrivateStaticDeprecatedSynchronized  131370
+NativeProtectedDeprecatedSynchronized  131364
+NativeProtectedStaticDeprecatedSynchronized  131372
+NativePublicFinalDeprecatedSynchronized  131377
+NativePublicStaticFinalDeprecatedSynchronized  131385
+NativePrivateFinalDeprecatedSynchronized  131378
+NativePrivateStaticFinalDeprecatedSynchronized  131386
+NativeProtectedFinalDeprecatedSynchronized  131380
+NativeProtectedStaticFinalDeprecatedSynchronized  131388
+
+*
+NativeParamsNone  384
+NativeParamsNoneStatic  392
+NativeParamsNoneFinal  400
+NativeParamsNoneStaticFinal  408
+NativeParamsPublic  385
+NativeParamsPublicStatic  393
+NativeParamsPrivate  386
+NativeParamsPrivateStatic  394
+NativeParamsProtected  388
+NativeParamsProtectedStatic  396
+NativeParamsPublicFinal  401
+NativeParamsPublicStaticFinal  409
+NativeParamsPrivateFinal  402
+NativeParamsPrivateStaticFinal  410
+NativeParamsProtectedFinal  404
+NativeParamsProtectedStaticFinal  412
+
+*
+NativeParamsNoneSynchronized  416
+NativeParamsNoneStaticSynchronized  392
+NativeParamsNoneFinalSynchronized  400
+NativeParamsNoneStaticFinalSynchronized  408
+NativeParamsPublicSynchronized  385
+NativeParamsPublicStaticSynchronized  393
+NativeParamsPrivateSynchronized  386
+NativeParamsPrivateStaticSynchronized  394
+NativeParamsProtectedSynchronized  388
+NativeParamsProtectedStaticSynchronized  396
+NativeParamsPublicFinalSynchronized  401
+NativeParamsPublicStaticFinalSynchronized  409
+NativeParamsPrivateFinalSynchronized  402
+NativeParamsPrivateStaticFinalSynchronized  410
+NativeParamsProtectedFinalSynchronized  404
+NativeParamsProtectedStaticFinalSynchronized  412
+
+*
+NoneDeprecated  131200
+NoneStaticDeprecated  131208
+NoneFinalDeprecated  131216
+NoneStaticFinalDeprecated  131224
+PublicDeprecated  131201
+PublicStaticDeprecated  131209
+PrivateDeprecated  131202
+PrivateStaticDeprecated  131210
+ProtectedDeprecated  131204
+ProtectedStaticDeprecated  131212
+PublicFinalDeprecated  131217
+PublicStaticFinalDeprecated  131225
+PrivateFinalDeprecated  131218
+PrivateStaticFinalDeprecated  131226
+ProtectedFinalDeprecated  131220
+ProtectedStaticFinalDeprecated  131228
+
+*
+NoneDeprecatedSynchronized  131232
+NoneStaticDeprecatedSynchronized  131240
+NoneFinalDeprecatedSynchronized  131248
+NoneStaticFinalDeprecatedSynchronized  131256
+PublicDeprecatedSynchronized  131233
+PublicStaticDeprecatedSynchronized  131241
+PrivateDeprecatedSynchronized  131234
+PrivateStaticDeprecatedSynchronized  131242
+ProtectedDeprecatedSynchronized  131236
+ProtectedStaticDeprecatedSynchronized  131244
+PublicFinalDeprecatedSynchronized  131249
+PublicStaticFinalDeprecatedSynchronized  131257
+PrivateFinalDeprecatedSynchronized  131250
+PrivateStaticFinalDeprecatedSynchronized  131258
+ProtectedFinalDeprecatedSynchronized  131252
+ProtectedStaticFinalDeprecatedSynchronized  131260
+
+*
+NativeNoneDeprecated  131456
+NativeNoneStaticDeprecated  131464
+NativeNoneFinalDeprecated  131472
+NativeNoneStaticFinalDeprecated  131480
+NativePublicDeprecated  131457
+NativePublicStaticDeprecated  131465
+NativePrivateDeprecated  131458
+NativePrivateStaticDeprecated  131466
+NativeProtectedDeprecated  131460
+NativeProtectedStaticDeprecated  131468
+NativePublicFinalDeprecated  131473
+NativePublicStaticFinalDeprecated  131481
+NativePrivateFinalDeprecated  131474
+NativePrivateStaticFinalDeprecated  131482
+NativeProtectedFinalDeprecated  131476
+NativeProtectedStaticFinalDeprecated  131484
+
+*
+NativeNoneDeprecatedSynchronized  131488
+NativeNoneStaticDeprecatedSynchronized  131496
+NativeNoneFinalDeprecatedSynchronized  131504
+NativeNoneStaticFinalDeprecatedSynchronized  131512
+NativePublicDeprecatedSynchronized  131489
+NativePublicStaticDeprecatedSynchronized  131497
+NativePrivateDeprecatedSynchronized  131490
+NativePrivateStaticDeprecatedSynchronized  131498
+NativeProtectedDeprecatedSynchronized  131492
+NativeProtectedStaticDeprecatedSynchronized  131500
+NativePublicFinalDeprecatedSynchronized  131505
+NativePublicStaticFinalDeprecatedSynchronized  131513
+NativePrivateFinalDeprecatedSynchronized  131506
+NativePrivateStaticFinalDeprecatedSynchronized  131514
+NativeProtectedFinalDeprecatedSynchronized  131508
+NativeProtectedStaticFinalDeprecatedSynchronized  131516
+
+AbstractClass  1056
+PublicAbstractClass  1057
+Annotation  9728
+PublicAnnotation  9729
+Class  32
+PublicClass  33
+Enum  16432
+PublicEnum  16433
+Interface  1536
+PublicInterface  1537
+PublicFinalClass  49
+FinalClass  48
