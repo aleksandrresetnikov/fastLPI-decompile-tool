@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("fastLPI decompile tool")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Flying messages ™")]
+[assembly: AssemblyCompany("Resetnikov Aleksandr (SANE5K) (https://github.com/aleksandrresetnikov)")]
 [assembly: AssemblyProduct("fastLPI engine ™ (fast lightweight post-inverse game engine) ™")]
-[assembly: AssemblyCopyright("Flying messages ™ Copyright ©  2021-2023")]
+[assembly: AssemblyCopyright("Copyright (c) 2022, SANE5K")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

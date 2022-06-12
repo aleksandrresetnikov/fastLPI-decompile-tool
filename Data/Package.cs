@@ -43,5 +43,10 @@ namespace fastLPI.tools.decompiler.data
         {
             this.JarDocumentItems.Enqueue(JarDocumentItem);
         }
+
+        public override string ToString()
+        {
+            return this.PackageName;
+        }
     }
 }

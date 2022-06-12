@@ -51,12 +51,13 @@ namespace fastLPI.tools.decompiler.data.digest
         public void PrintDigest(JarDocumentItemType filter = JarDocumentItemType.Class)
         {
             foreach (JarDocumentItem item in this.GetDigest())
-                if (item.ItemType == filter)
+                //if (item.ItemType == filter)
+                if (item.AccessLevelManager.IsClass())
                 Console.WriteLine($"Name: {/*item.ItemName*//*item.ItemLocationPath*//*item.GetFullName()*/item.GetContactName()}; " +
-                    $"Location path: {item.ItemLocationPath}"/* +
-                    $"Access level: {item.AccessLevel}; " +
-                    $"Package: {item.Package}; " +
-                    $"Type: {item.ItemType.ToString()}; " +
+                    $"Package: {item.Package}; "/* +
+                    $"Location path: {item.ItemLocationPath}" +
+                    $"Access level: {item.AccessLevel}; "*/ +
+                    $"Type: {item.AccessLevelManager.AccessLevel.ToString()}; " /*+
                     $"Type parent: {(item.ParentDocumentItem != null ? item.ParentDocumentItem.ItemType.ToString() : "Root")};"*/);
         }
 

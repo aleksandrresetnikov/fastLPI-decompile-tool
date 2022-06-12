@@ -409,6 +409,666 @@
         /// <summary>
         /// Error !
         /// </summary>
-        Error/* = 1025*/
+        Error,/* = 1025*/
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneSynchronized = 32,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneStaticSynchronized = 40,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneFinalSynchronized = 48,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneStaticFinalSynchronized = 56,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicSynchronized = 33,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicStaticSynchronized = 41,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateSynchronized = 34,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateStaticSynchronized = 42,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedSynchronized = 36,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedStaticSynchronized = 44,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicFinalSynchronized = 49,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicStaticFinalSynchronized = 57,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateFinalSynchronized = 50,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateStaticFinalSynchronized = 58,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedFinalSynchronized = 52,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedStaticFinalSynchronized = 60,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneSynchronizedParams = 160,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneStaticSynchronizedParams = 168,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneFinalSynchronizedParams = 176,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneStaticFinalSynchronizedParams = 184,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicSynchronizedParams = 161,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicStaticSynchronizedParams = 169,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateSynchronizedParams = 162,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateStaticSynchronizedParams = 170,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedSynchronizedParams = 164,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedStaticSynchronizedParams = 172,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicFinalSynchronizedParams = 177,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicStaticFinalSynchronizedParams = 185,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateFinalSynchronizedParams = 178,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateStaticFinalSynchronizedParams = 186,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedFinalSynchronizedParams = 180,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedStaticFinalSynchronizedParams = 188,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneDeprecatedSynchronized = 131104,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneStaticDeprecatedSynchronized = 131112,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneFinalDeprecatedSynchronized = 131120,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneStaticFinalDeprecatedSynchronized = 131128,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicDeprecatedSynchronized = 131105,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicStaticDeprecatedSynchronized = 131113,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateDeprecatedSynchronized = 131106,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateStaticDeprecatedSynchronized = 131114,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedDeprecatedSynchronized = 131108,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedStaticDeprecatedSynchronized = 131116,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicFinalDeprecatedSynchronized = 131121,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PublicStaticFinalDeprecatedSynchronized = 131129,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateFinalDeprecatedSynchronized = 131122,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        PrivateStaticFinalDeprecatedSynchronized = 131130,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedFinalDeprecatedSynchronized = 131124,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        ProtectedStaticFinalDeprecatedSynchronized = 131132,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneSynchronized = 288,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticSynchronized = 264,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneFinalSynchronized = 272,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticFinalSynchronized = 280,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicSynchronized = 257,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticSynchronized = 265,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateSynchronized = 258,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticSynchronized = 266,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedSynchronized = 260,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticSynchronized = 268,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicFinalSynchronized = 273,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticFinalSynchronized = 281,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateFinalSynchronized = 274,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticFinalSynchronized = 282,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedFinalSynchronized = 276,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticFinalSynchronized = 284,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneDeprecated = 131328,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticDeprecated = 131336,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneFinalDeprecated = 131344,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticFinalDeprecated = 131352,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicDeprecated = 131329,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticDeprecated = 131337,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateDeprecated = 131330,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticDeprecated = 131338,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedDeprecated = 131332,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticDeprecated = 131340,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicFinalDeprecated = 131345,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticFinalDeprecated = 131353,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateFinalDeprecated = 131346,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticFinalDeprecated = 131354,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedFinalDeprecated = 131348,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticFinalDeprecated = 131356,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneDeprecatedSynchronized = 131360,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticDeprecatedSynchronized = 131368,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneFinalDeprecatedSynchronized = 131376,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticFinalDeprecatedSynchronized = 131384,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicDeprecatedSynchronized = 131361,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticDeprecatedSynchronized = 131369,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateDeprecatedSynchronized = 131362,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticDeprecatedSynchronized = 131370,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedDeprecatedSynchronized = 131364,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticDeprecatedSynchronized = 131372,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicFinalDeprecatedSynchronized = 131377,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticFinalDeprecatedSynchronized = 131385,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateFinalDeprecatedSynchronized = 131378,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticFinalDeprecatedSynchronized = 131386,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedFinalDeprecatedSynchronized = 131380,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticFinalDeprecatedSynchronized = 131388,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneParams = 384,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticParams = 392,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneFinalParams = 400,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticFinalParams = 408,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicParams = 385,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticParams = 393,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateParams = 386,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticParams = 394,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedParams = 388,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticParams = 396,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicFinalParams = 401,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticFinalParams = 409,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateFinalParams = 402,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticFinalParams = 410,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedFinalParams = 404,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticFinalParams = 412,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneSynchronizedParams = 416,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticSynchronizedParams = 392,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneFinalSynchronizedParams = 400,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeNoneStaticFinalSynchronizedParams = 408,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicSynchronizedParams = 385,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticSynchronizedParams = 393,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateSynchronizedParams = 386,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticSynchronizedParams = 394,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedSynchronizedParams = 388,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticSynchronizedParams = 396,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicFinalSynchronizedParams = 401,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePublicStaticFinalSynchronizedParams = 409,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateFinalSynchronizedParams = 402,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativePrivateStaticFinalSynchronizedParams = 410,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedFinalSynchronizedParams = 404,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NativeProtectedStaticFinalSynchronizedParams = 412,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneDeprecated = 131200,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneStaticDeprecated = 131208,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneFinalDeprecated = 131216,
+
+        /// <summary>
+        /// java::
+        /// </summary>
+        NoneStaticFinalDeprecated = 131224
     }
 }
