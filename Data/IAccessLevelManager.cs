@@ -3,6 +3,7 @@
     public interface IAccessLevelManager
     {
         void SetAccessLevel(AccessLevelFlags AccessLevel);
+        void SetDocumentItem(JarDocumentItem DocumentItem);
         bool IsStatic();
         bool IsFinal();
         bool IsNone();

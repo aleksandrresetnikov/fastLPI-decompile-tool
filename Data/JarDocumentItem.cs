@@ -60,7 +60,7 @@ namespace fastLPI.tools.decompiler.data
             private protected set
             {
                 this._AccessLevel = value;
-                this.AccessLevelManager = new AccessLevelManager(this._AccessLevel);
+                this.AccessLevelManager = new AccessLevelManager(this._AccessLevel, this);
             }
         }
 
@@ -73,7 +73,7 @@ namespace fastLPI.tools.decompiler.data
             get
             {
                 if (this._AccessLevelManager == null) 
-                    this._AccessLevelManager = new AccessLevelManager(this._AccessLevel);
+                    this._AccessLevelManager = new AccessLevelManager(this._AccessLevel, this);
                 return this._AccessLevelManager;
             }
             private protected set

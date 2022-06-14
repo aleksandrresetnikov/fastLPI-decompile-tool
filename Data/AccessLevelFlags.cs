@@ -1,4 +1,4 @@
-namespace fastLPI.tools.decompiler.data
+﻿namespace fastLPI.tools.decompiler.data
 {
     /// <summary>
     /// Access levels in java.

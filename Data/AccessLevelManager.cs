@@ -6,14 +6,29 @@
         public virtual AccessLevelFlags AccessLevel
         { get; private protected set; }
 
+        public virtual JarDocumentItem DocumentItem
+        { get; private protected set; }
+
         public AccessLevelManager(AccessLevelFlags AccessLevel)
         {
             this.AccessLevel = AccessLevel;
+            this.DocumentItem = null;
+        }
+
+        public AccessLevelManager(AccessLevelFlags AccessLevel, JarDocumentItem DocumentItem)
+        {
+            this.AccessLevel = AccessLevel;
+            this.DocumentItem = DocumentItem;
         }
 
         public void SetAccessLevel(AccessLevelFlags AccessLevel)
         {
             this.AccessLevel = AccessLevel;
+        }
+
+        public void SetDocumentItem(JarDocumentItem DocumentItem)
+        {
+            this.DocumentItem = DocumentItem;
         }
 
         public virtual bool IsStatic() => //32
@@ -172,7 +187,8 @@
              this.AccessLevel == AccessLevelFlags.Class ||
              this.AccessLevel == AccessLevelFlags.PublicClass ||
              this.AccessLevel == AccessLevelFlags.PublicFinalClass ||
-             this.AccessLevel == AccessLevelFlags.FinalClass);
+             this.AccessLevel == AccessLevelFlags.FinalClass) && 
+            (DocumentItem == null || this.DocumentItem.ItemType == JarDocumentItemType.Class);
 
         public bool IsEnum() =>
             (this.AccessLevel == AccessLevelFlags.Enum ||
