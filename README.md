@@ -39,4 +39,4 @@ I started developing a java source code analyzer to determine which packages, cl
 2. Regex-related slow loading of data.
 3. Slowdown when determining the element type.
 4. Confuses AccessLevel.Synchronized and AccessLevel.PublicClass
-5. 
+5. Distinguishes between types: synchronized*, deprecated params*, native params*.
