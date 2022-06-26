@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 
 using fastLPI.tools.decompiler.helper;
+using fastLPI.tools.decompiler.diagnostics;
 
 namespace fastLPI.tools.decompiler
 {
@@ -34,7 +35,7 @@ namespace fastLPI.tools.decompiler
         public string DecompilerProcessReaderOutputData
         { get; private protected set; }
 
-        public List<string> Logs
+        public LogsCollector Logs
         { get; private protected set; }
 
         private Stopwatch Stopwatch;
@@ -46,6 +47,7 @@ namespace fastLPI.tools.decompiler
 
             this.Properties = new DecompilerProperties(new JD_CLI_Dictionary());
             this.Stopwatch = new Stopwatch();
+            this.Logs = new LogsCollector();
 
             this.AddLog("Loaded.");
         }
@@ -103,15 +105,19 @@ namespace fastLPI.tools.decompiler
 
         public void AddLog(string data, bool showTime = false)
         {
-            if (this.Logs == null)
-                this.Logs = new List<string>();
-
-            this.Logs.Add(showTime ? DateTime.Now.ToString() : "" + data);
+            this.CheckLogsCollector();
+            this.Logs.AddLog(data, showTime);
         }
 
-        public IEquatable<string> GetLogs()
+        public List<string> GetLogs()
         {
-            return (this.Logs as IEquatable<string>);
+            this.CheckLogsCollector();
+            return this.Logs.GetLogs();
+        }
+
+        private void CheckLogsCollector()
+        {
+            if (this.Logs == null) this.Logs = new LogsCollector();
         }
     }
 }

@@ -99,6 +99,11 @@
     <Compile Include="DecompilerProperties.cs" />
     <Compile Include="Diagnostics\Dump.cs" />
     <Compile Include="Diagnostics\DumpEventArgs.cs" />
+    <Compile Include="Diagnostics\ILogBuilder.cs" />
+    <Compile Include="Diagnostics\ILogsCollector.cs" />
+    <Compile Include="Diagnostics\Log.cs" />
+    <Compile Include="Diagnostics\LogBuilder.cs" />
+    <Compile Include="Diagnostics\LogsCollector.cs" />
     <Compile Include="Diagnostics\LPI_Libs_Remastering_Dump.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="IDecompilerProperties.cs" />
