@@ -5,5 +5,6 @@
         public static bool DumpPerformance = true;
         public static string DumpPath = @"";
         public static string DumpLogExtension = ".log";
+        public static DumpLevel DumpLevel = DumpLevel.ALWAYS;
     }
 }

@@ -15,6 +15,8 @@ namespace fastLPI.tools.decompiler.diagnostics
 
         public static void AddDump(string path, string text, bool drawDate = false)
         {
+            if (!DumpAvailableStatus()) return;
+
             if (EventOnAddDumpCall != null)
                 EventOnAddDumpCall.Invoke(new DumpEventArgs(path, text, drawDate));
 
@@ -26,6 +28,8 @@ namespace fastLPI.tools.decompiler.diagnostics
 
         public static void CreateDump(string path, string text, bool drawDate = false)
         {
+            if (!DumpAvailableStatus()) return;
+
             if (EventOnCreateDumpCall != null)
                 EventOnCreateDumpCall.Invoke(new DumpEventArgs(path, text, drawDate));
 
@@ -37,6 +41,8 @@ namespace fastLPI.tools.decompiler.diagnostics
 
         public static void AddNewDump(string path, string text, bool drawDate = false)
         {
+            if (!DumpAvailableStatus()) return;
+
             if (EventOnAddNewDumpCall != null)
                 EventOnAddNewDumpCall.Invoke(new DumpEventArgs(path, text, drawDate));
 
@@ -46,6 +52,29 @@ namespace fastLPI.tools.decompiler.diagnostics
 
             File.WriteAllText(LPI_Libs_Remastering_Dump.DumpPath + @"\" + 
                 Util.GetNewDumpName(name, LPI_Libs_Remastering_Dump.DumpPath) + LPI_Libs_Remastering_Dump.DumpLogExtension, text);
+        }
+
+
+        private static bool DumpAvailableStatus()
+        {
+            switch (LPI_Libs_Remastering_Dump.DumpLevel)
+            {
+                case DumpLevel.ALWAYS: return true;
+                case DumpLevel.DEBUG:
+#if DEBUG
+                    return true;
+#else
+                    return false;
+#endif
+                case DumpLevel.RELEASE:
+#if DEBUG
+                    return false;
+#else
+                    return true;
+#endif
+                case DumpLevel.NEVER: return false;
+                default: return false;
+            }
         }
     }
 }
