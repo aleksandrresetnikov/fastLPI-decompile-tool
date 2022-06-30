@@ -16,4 +16,12 @@
         ERROR,
         OFF
     }
+
+    public enum DumpLevel
+    {
+        ALWAYS,
+        DEBUG,
+        RELEASE,
+        NEVER
+    }
 }
