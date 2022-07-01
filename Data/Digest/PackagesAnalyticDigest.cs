@@ -40,6 +40,17 @@ namespace fastLPI.tools.decompiler.data.digest
                 .GetJarDocumentItems();
         }
 
+        public Queue<JarDocumentItem> GetPackageJarDocumentItemsFromImportReference(string[] ImportReferences)
+        {
+            Queue<JarDocumentItem> outputValue = new Queue<JarDocumentItem>();
+
+            foreach (string ImportReference in ImportReferences)
+                outputValue.EnqueueRange(new PackageJarDocumentItemsFromImportReferenceManager(PackageCollector, ImportReference)
+                    .GetJarDocumentItems().ToArray());
+
+            return outputValue;
+        }
+
         public void SetPackageCollector(PackageCollector PackageCollector)
         {
             this.PackageCollector = PackageCollector;
@@ -66,7 +77,7 @@ namespace fastLPI.tools.decompiler.data.digest
         public Queue<JarDocumentItem> GetJarDocumentItems()
         {
             string package = Util.GetPackageNameFromReference(this.ImportReference);
-            Queue <JarDocumentItem> outputValue = new Queue<JarDocumentItem>();
+            Queue<JarDocumentItem> outputValue = new Queue<JarDocumentItem>();
 
             if (!Regex.IsMatch(this.ImportReference, ClassImportReferencePattern)) return outputValue;
 
