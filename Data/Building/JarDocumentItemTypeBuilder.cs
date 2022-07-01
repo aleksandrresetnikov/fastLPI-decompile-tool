@@ -41,13 +41,11 @@ namespace fastLPI.tools.decompiler.data.building
             this.ChildElementsPresent = ChildElementsPresent;
         }
 
-        static int Step = 0;
         public JarDocumentItemType BuildItemType()
         {
             try
             {
                 string val = this.Item.ItemContext;
-                Console.WriteLine($"#{Step++}: {val}; Parent item type: {GetParentItemType()}");
 
                 if (val.IsClassFile())
                     return JarDocumentItemType.ClassFile;

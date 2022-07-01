@@ -7,6 +7,8 @@ namespace fastLPI.tools.decompiler.data.building
 {
     public class JarFileItemsBuilder
     {
+        public static bool PrintProcessingItem = false;
+
         /// <summary>
         /// Xml file.
         /// </summary>
@@ -23,7 +25,7 @@ namespace fastLPI.tools.decompiler.data.building
             return this.GetSubItems(this.XmlFile);
         }
 
-        uint step = 0;
+        ulong step = 0;
         private protected virtual Queue<JarDocumentItem> GetSubItems(XElement item, string tab = "", 
             JarDocumentItem ParentDocumentItem = null)
         {
@@ -47,7 +49,7 @@ namespace fastLPI.tools.decompiler.data.building
                 SubItem.SetAccessLevel(DocumentAccessLevelBuilder.BuildAccessLevel());
                 SubItem.SetPackage(DocumentItemPackageBuilder.BuildPackage());
 
-                //Console.WriteLine($"#{++step} - {SubItem.GetFullName()}");
+                if (PrintProcessingItem) Console.WriteLine($"#{++step} - {SubItem.GetFullName()}");
                 //ElementBuilder.PrintItemLocationPath();
 
                 OutputValue.Enqueue(SubItem);
