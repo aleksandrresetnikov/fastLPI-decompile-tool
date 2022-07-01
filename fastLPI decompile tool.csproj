@@ -61,8 +61,11 @@
     <Compile Include="Data\Digest\Digest.cs" />
     <Compile Include="Data\Digest\IDigest.cs" />
     <Compile Include="Data\Digest\IDigestPrinter.cs" />
+    <Compile Include="Data\Digest\IJarFileDigestFilter.cs" />
     <Compile Include="Data\Digest\IJarFileDigestGeneralAnalyzer.cs" />
+    <Compile Include="Data\Digest\IPackagesAnalyticDigest.cs" />
     <Compile Include="Data\Digest\JarFileDigest.cs" />
+    <Compile Include="Data\Digest\PackagesAnalyticDigest.cs" />
     <Compile Include="Data\ElementsUtil.cs" />
     <Compile Include="Data\IAccessLevelManager.cs" />
     <Compile Include="Data\IJarDataFromXmlBuilder.cs" />

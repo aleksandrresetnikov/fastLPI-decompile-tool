@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace fastLPI.tools.decompiler.data.digest
 {
-    public class JarFileDigest : Digest<JarDocumentItem>, IDigestPrinter, IJarFileDigestGeneralAnalyzer
+    public class JarFileDigest : Digest<JarDocumentItem>, IDigestPrinter, IJarFileDigestGeneralAnalyzer, IJarFileDigestFilter
     {
         private Queue<JarDocumentItem> QueueCollection;
 
@@ -70,31 +70,32 @@ namespace fastLPI.tools.decompiler.data.digest
 
         public Queue<JarDocumentItem> GetMethods()
         {
-            throw new NotImplementedException();
+            return GetFilterItems(JarDocumentItemType.Method);
         }
 
         public Queue<JarDocumentItem> GetClassFiles()
         {
-            throw new NotImplementedException();
+            return GetFilterItems(JarDocumentItemType.ClassFile);
         }
 
         public Queue<JarDocumentItem> GetConstructors()
         {
-            throw new NotImplementedException();
+            return GetFilterItems(JarDocumentItemType.Constructor);
         }
 
         public Queue<JarDocumentItem> GetFields()
         {
-            throw new NotImplementedException();
+            return GetFilterItems(JarDocumentItemType.Field);
         }
 
         public Queue<JarDocumentItem> GetPackageItems()
         {
-            throw new NotImplementedException();
+            return GetFilterItems(JarDocumentItemType.PackageItem);
         }
         #endregion
 
-        private Queue<JarDocumentItem> GetFilterItems(JarDocumentItemType filter)
+        #region IJarFileDigestFilter
+        public Queue<JarDocumentItem> GetFilterItems(JarDocumentItemType filter)
         {
             Queue<JarDocumentItem> outputValue = new Queue<JarDocumentItem>();
 
@@ -104,5 +105,6 @@ namespace fastLPI.tools.decompiler.data.digest
 
             return outputValue;
         }
+        #endregion
     }
 }

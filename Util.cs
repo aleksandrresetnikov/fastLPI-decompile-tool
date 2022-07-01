@@ -95,5 +95,16 @@ namespace fastLPI.tools.decompiler.helper
             else if (num < 10000) return $"{num}";
             else return num.ToString();
         }
+
+        public static string GetPackageNameFromReference(string referenceContext)
+        {
+            string[] items = referenceContext.Split('.');
+            string outputValue = "";
+
+            for (int i = 0; i < items.Length - 1; i++)
+                outputValue += $"{(i != 0 ? "." : "")}{items[i]}";
+
+            return outputValue;
+        }
     }
 }

@@ -23,6 +23,11 @@ namespace fastLPI.tools.decompiler.data
             return null;
         }
 
+        public virtual Package GetPackage(Package item)
+        {
+            return this.GetPackage(item.PackageName);
+        }
+
         public virtual bool DeletePackage(string PackageName)
         {
             foreach (Package item in this)

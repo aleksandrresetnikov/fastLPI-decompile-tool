@@ -34,6 +34,26 @@ namespace fastLPI.tools.decompiler.data
             this.PackageName = PackageName;
         }
 
+        public JarDocumentItem GetJarDocumentItem(string JarDocumentItemName)
+        {
+            foreach (JarDocumentItem item in this.JarDocumentItems)
+                if (item.ItemName == JarDocumentItemName)
+                    return item;
+
+            return null;
+        }
+
+        public Queue<JarDocumentItem> FilterJarDocumentItems(JarDocumentItemType filter)
+        {
+            Queue<JarDocumentItem> outputValue = new Queue<JarDocumentItem>();
+
+            foreach (JarDocumentItem item in this.JarDocumentItems)
+                if (item.ItemType == filter)
+                    outputValue.Enqueue(item);
+
+            return outputValue;
+        }
+
         public void SetJarDocumentItems(Queue<JarDocumentItem> JarDocumentItems)
         {
             this.JarDocumentItems = JarDocumentItems;

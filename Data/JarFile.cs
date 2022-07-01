@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using fastLPI.tools.decompiler.data.digest;
 using fastLPI.tools.decompiler.diagnostics;
 
 namespace fastLPI.tools.decompiler.data
@@ -118,6 +119,11 @@ namespace fastLPI.tools.decompiler.data
         public void SetPackageCollector(PackageCollector PackageCollector)
         {
             this.PackageCollector = PackageCollector;
+        }
+
+        public PackagesAnalyticDigest GetPackagesAnalyticDigestInstance()
+        {
+            return new PackagesAnalyticDigest(this.PackageCollector);
         }
         #endregion
 

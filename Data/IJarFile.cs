@@ -9,5 +9,6 @@ namespace fastLPI.tools.decompiler.data
         void SetChildItems(Queue<JarDocumentItem> ChildItems);
         void SetJarDocumentProperties(JarDocumentProperties JarDocumentProperties);
         void SetPackageCollector(PackageCollector PackageCollector);
+        digest.PackagesAnalyticDigest GetPackagesAnalyticDigestInstance();
     }
 }
