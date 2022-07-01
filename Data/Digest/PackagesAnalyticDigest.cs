@@ -78,13 +78,13 @@ namespace fastLPI.tools.decompiler.data.digest
         {
             string package = Util.GetPackageNameFromReference(this.ImportReference);
             Queue<JarDocumentItem> outputValue = new Queue<JarDocumentItem>();
+            Package packageItem = this.PackageCollector.GetPackage(package);
 
-            if (!Regex.IsMatch(this.ImportReference, ClassImportReferencePattern)) return outputValue;
+            if (packageItem == null || !Regex.IsMatch(this.ImportReference, ClassImportReferencePattern)) return outputValue;
 
             if (this.ImportReference.Contains("*"))
             {
-                foreach (JarDocumentItem item in this.PackageCollector.GetPackage(package)
-                    .FilterJarDocumentItems(JarDocumentItemType.Class))
+                foreach (JarDocumentItem item in packageItem.FilterJarDocumentItems(JarDocumentItemType.Class))
                     outputValue.Enqueue(item);
             }
             else 
