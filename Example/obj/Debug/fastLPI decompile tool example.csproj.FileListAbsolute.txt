@@ -1,0 +1,10 @@
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\fastLPI decompile tool example.exe.config
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\fastLPI decompile tool example.exe
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\fastLPI decompile tool example.pdb
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\fastLPI decompile tool.dll
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\fastLPI decompile tool.pdb
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\fastLPI decompile tool example.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\fastLPI decompile tool example.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\fastLPI decompile tool example.csproj.CopyComplete
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\fastLPI decompile tool example.exe
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\fastLPI decompile tool example.pdb

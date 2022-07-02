@@ -72,7 +72,7 @@ namespace fastLPI.tools.decompiler
             string BatCode = File.ReadAllText(DecompilerBatPath);
             BatCode = BatCode.Replace("$$$FILEPATH$$$", $"\"%{PathIn}%\"");
             BatCode = BatCode.Replace("$$$OUTPATH$$$", $"\"%{PathTo}%\"");
-            BatCode = BatCode.Replace("$$$DECOMPILERJARPATH$$$", DecompilerPath);
+            BatCode = BatCode.Replace("$$$DECOMPILERJARPATH$$$", $"\"{DecompilerPath}\"");
             BatCode = BatCode.Replace("$$$OPTIONS$$$", Properties.CompileDecompilerOptions());
             File.WriteAllText(DecompilerExeBatPath, BatCode);
 

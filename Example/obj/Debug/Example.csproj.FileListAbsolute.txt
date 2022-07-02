@@ -1,0 +1,20 @@
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\fastLPI decompile tool.dll
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\fastLPI decompile tool.pdb
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\Example.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\Example.csproj.CopyComplete
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\Example.exe.config
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\Example.exe
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\bin\Debug\Example.pdb
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\Example.exe
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\Example.pdb
+C:\Users\user\source\repos\fastLPI decompile tool\fastLPI decompile tool example\obj\Debug\Example.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\fastLPI decompile tool\Example\bin\Debug\Example.exe.config
+C:\Users\user\source\repos\fastLPI decompile tool\Example\bin\Debug\Example.exe
+C:\Users\user\source\repos\fastLPI decompile tool\Example\bin\Debug\Example.pdb
+C:\Users\user\source\repos\fastLPI decompile tool\Example\bin\Debug\fastLPI decompile tool.dll
+C:\Users\user\source\repos\fastLPI decompile tool\Example\bin\Debug\fastLPI decompile tool.pdb
+C:\Users\user\source\repos\fastLPI decompile tool\Example\obj\Debug\Example.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\fastLPI decompile tool\Example\obj\Debug\Example.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\fastLPI decompile tool\Example\obj\Debug\Example.csproj.CopyComplete
+C:\Users\user\source\repos\fastLPI decompile tool\Example\obj\Debug\Example.exe
+C:\Users\user\source\repos\fastLPI decompile tool\Example\obj\Debug\Example.pdb
