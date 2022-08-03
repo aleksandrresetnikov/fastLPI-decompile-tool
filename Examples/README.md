@@ -9,3 +9,10 @@ decompiler.Properties.LogLevel = LogLevel.INFO; // LogLevel - decompiler log lev
 decompiler.CreateNoWindow = false;
 decompiler.Decompile(true); // decompile...
 ```
+
+#### You can display the result of the decompiler execution (logs).
+```C#
+...
+// Output to the console decompiler logs.
+Console.WriteLine(decompiler.DecompilerProcessReaderOutputData);
+```
