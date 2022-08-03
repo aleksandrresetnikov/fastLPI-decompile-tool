@@ -1,5 +1,5 @@
 ### An example of decompiling a jar file:
-```
+```C#
  // An instance of the JD_CLI_JavaDecompiler class.
 JD_CLI_JavaDecompiler decompiler = new JD_CLI_JavaDecompiler(PathIn, PathTo);
 decompiler.Properties.SkipResources = false; // SkipResources - whether the decompiler will skip resources when decompiling.
