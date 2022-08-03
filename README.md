@@ -15,8 +15,9 @@ The jd-cli decompiler has an outputZipFile command that takes the value of the o
 
 Usage: <strong>jd-gui-forLPI </strong>\<path to jar file\> - Next to the selected jar file (in the same folder) an xml document will be created with the contents of this jar file (classes, fields, motods and their access level). Next, you can connect the fastLPI-decompile-tool library to your C Sharp project, and use it to find out the entire contents of the jar, as well as the access level of classes, motods, fields, etc. You can also find interfaces, enumerations, etc.
 
-#### You can download the jd-gui-forLPI source <a href="https://github.com/aleksandrresetnikov/fastLPI-decompile-tool/blob/main/Files/jd-gui-forLPI/source%20code.zip">here</a>.
-#### You can use the <a href="https://github.com/flyingmessages/fastLPI-decompile-tool-example">excellent example</a> using fastLPI-decompile-tool.
+<strong>You can download the jd-gui-forLPI source <a href="https://github.com/aleksandrresetnikov/fastLPI-decompile-tool/blob/main/Files/jd-gui-forLPI/source%20code.zip">here</a>.</strong></br>
+<strong>You can use the <a href="https://github.com/flyingmessages/fastLPI-decompile-tool-example">excellent example</a> using fastLPI-decompile-tool.</strong></br>
+<strong>You can see ready-made examples <a href="https://github.com/aleksandrresetnikov/fastLPI-decompile-tool/tree/main/Examples">here</a>.</strong>
 
 For more examples and help just email me (aleksandrresetnikov093@gmail.com).
 
