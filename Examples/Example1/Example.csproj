@@ -51,7 +51,7 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\fastLPI decompile tool.csproj">
+    <ProjectReference Include="..\..\fastLPI decompile tool.csproj">
       <Project>{7487908b-1a98-4df3-b6b4-3285f9873928}</Project>
       <Name>fastLPI decompile tool</Name>
     </ProjectReference>

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fastLPI decompile tool", "fastLPI decompile tool.csproj", "{7487908B-1A98-4DF3-B6B4-3285F9873928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{06178752-F5DD-4021-BD7B-438B6DFB1BF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Examples\Example1\Example.csproj", "{06178752-F5DD-4021-BD7B-438B6DFB1BF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
