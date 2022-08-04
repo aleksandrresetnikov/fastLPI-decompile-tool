@@ -76,50 +76,50 @@
 
         /// <returns>DisplayLineNumbersOptionCommand</returns>
         public virtual string GetDisplayLineNumbersOptionCommand() => 
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>EscapeUnicodeCharactersOptionCommand</returns>
         public virtual string GetEscapeUnicodeCharactersOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>HelpOptionCommand</returns>
         public virtual string GetHelpOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>LogLevelOptionCommand</returns>
         public virtual string GetLogLevelOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>OutputConsoleOptionCommand</returns>
         public virtual string GetOutputConsoleOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>OutputDirOptionCommand</returns>
         public virtual string GetOutputDirOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>OutputDirStructuredOptionCommand</returns>
         public virtual string GetOutputDirStructuredOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>OutputZipFileOptionCommand</returns>
         public virtual string GetOutputZipFileOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>PatternOptionCommand</returns>
         public virtual string GetPatternOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>SerialProcessingOptionCommand</returns>
         public virtual string GetSerialProcessingOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>SkipResourcesOptionCommand</returns>
         public virtual string GetSkipResourcesOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
 
         /// <returns>VersionOptionCommand</returns>
         public virtual string GetVersionOptionCommand() =>
-            throw new NonExistingCommandException();
+            throw new fastLPI.tools.decompiler.helper.NonExistingCommandException();
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 
+using fastLPI.tools.decompiler.helper;
+
 namespace fastLPI.tools.decompiler
 {
     public class JavaDecompiler : IJavaDecompiler
