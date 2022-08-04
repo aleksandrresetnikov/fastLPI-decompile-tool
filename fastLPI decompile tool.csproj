@@ -41,13 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analyzer\Accesslevel.cs" />
-    <Compile Include="Analyzer\ClassContentManager.cs" />
-    <Compile Include="Analyzer\CodeMarkup.cs" />
-    <Compile Include="Analyzer\DocumentItem.cs" />
-    <Compile Include="Analyzer\JavaClassType.cs" />
-    <Compile Include="Analyzer\Method.cs" />
-    <Compile Include="Analyzer\MethodUtil.cs" />
     <Compile Include="Data\AccessLevelFlags.cs" />
     <Compile Include="Data\AccessLevelManager.cs" />
     <Compile Include="Data\Building\JarDataFromXmlLoader.cs" />
@@ -116,6 +109,7 @@
     <Compile Include="IMethodDictionary.cs" />
     <Compile Include="Data\JarDocumentItem.cs" />
     <Compile Include="IO_Util.cs" />
+    <Compile Include="Java Sourse Code Analysis\JavaSourseCode.cs" />
     <Compile Include="JavaDecompiler.cs" />
     <Compile Include="JD_CLI_Dictionary.cs" />
     <Compile Include="JD_CLI_JavaDecompiler.cs" />
@@ -128,7 +122,7 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Analyzer\README.md" />
+    <None Include="Java Sourse Code Analysis\README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-using fastLPI.tools.decompiler.analytics;
+//using fastLPI.tools.decompiler.analytics;
 using fastLPI.tools.decompiler.data;
 
 namespace fastLPI.tools.decompiler.helper
@@ -13,7 +13,7 @@ namespace fastLPI.tools.decompiler.helper
         public static string RemoveSpaces(this string Text) =>
             Text.Replace(" ", "");
 
-        public static Accesslevel GetAccesslevel(string text)
+        /*public static Accesslevel GetAccesslevel(string text)
         {
             //Console.WriteLine($"!{text.ToLower()}!");
 
@@ -24,7 +24,7 @@ namespace fastLPI.tools.decompiler.helper
             else if (text.ToLower().RemoveSpaces().Contains("protected")) return Accesslevel.Protected;
             else if (text.ToLower().RemoveSpaces().Contains("default")) return Accesslevel.Default;
             else return Accesslevel.None;
-        }
+        }*/
 
         public static string GetClassName(string text)
         {
