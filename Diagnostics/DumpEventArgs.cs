@@ -13,7 +13,7 @@
 
         public DumpEventArgs(string Path)
         {
-            this.Text = Text;
+            this.Path = Path;
         }
 
         public DumpEventArgs(string Path, string Text)

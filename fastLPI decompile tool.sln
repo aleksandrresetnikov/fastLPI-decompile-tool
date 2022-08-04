@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fastLPI decompile tool", "f
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Examples\Example1\Example.csproj", "{06178752-F5DD-4021-BD7B-438B6DFB1BF9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{3352FAD8-07E8-44D2-9142-075F00A923B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2", "Examples\Example2\Example2.csproj", "{D7AB91FC-949F-4565-9A27-79CABE3D7EB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,17 @@ Global
 		{06178752-F5DD-4021-BD7B-438B6DFB1BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06178752-F5DD-4021-BD7B-438B6DFB1BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06178752-F5DD-4021-BD7B-438B6DFB1BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7AB91FC-949F-4565-9A27-79CABE3D7EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7AB91FC-949F-4565-9A27-79CABE3D7EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7AB91FC-949F-4565-9A27-79CABE3D7EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7AB91FC-949F-4565-9A27-79CABE3D7EB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06178752-F5DD-4021-BD7B-438B6DFB1BF9} = {3352FAD8-07E8-44D2-9142-075F00A923B5}
+		{D7AB91FC-949F-4565-9A27-79CABE3D7EB8} = {3352FAD8-07E8-44D2-9142-075F00A923B5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B0C87B8-259E-4B98-B2B4-B682F688686B}
