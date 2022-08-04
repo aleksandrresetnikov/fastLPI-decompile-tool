@@ -45,5 +45,61 @@ namespace fastLPI.tools.decompiler.analysis
 
             return context.Substring(startIndex, endIndex - startIndex + 1);
         }
+
+        /// <summary>
+        /// Removes all comments from the source code context.
+        /// </summary>
+        /// <param name="context">Source code context</param>
+        /// <returns></returns>
+        public static string ClearComments(this string context)
+        {
+            string outputValue = context;
+
+            foreach (Match comment_item in Regex.Matches(outputValue, @"//.*$", RegexOptions.Multiline))
+                outputValue = outputValue.Replace(comment_item.Value, "");
+            foreach (Match comment_item in Regex.Matches(outputValue, @"(/\*.*?\*/)|(/\*.*)", RegexOptions.Singleline))
+                outputValue = outputValue.Replace(comment_item.Value, "");
+            foreach (Match comment_item in Regex.Matches(outputValue, @"(/\*.*?\*/)|(.*\*/)", RegexOptions.Singleline | RegexOptions.RightToLeft))
+                outputValue = outputValue.Replace(comment_item.Value, "");
+
+            return outputValue;
+        }
+
+        public static void GetAllLevelSegments(this string context)
+        {
+            Queue<LevelSegmentItem> levelSegmentItems = new Queue<LevelSegmentItem>();
+
+            bool isFirst = true;
+            int endIndex = 0;
+            int parenthesesLevel = 0;
+            for (; endIndex < context.Length; endIndex++)
+            {
+                if (context[endIndex] == '{')
+                {
+                    parenthesesLevel++;
+                    isFirst = false;
+                }
+                if (context[endIndex] == '}')
+                {
+                    parenthesesLevel--;
+                    if (parenthesesLevel < 0) throw new CouldNotFindTheEndOfTheParenthesisLevelException();
+                }
+                if (parenthesesLevel == 0 && !isFirst) break;
+            }
+
+        }
+    }
+
+    public class LevelSegmentItem
+    {
+        public string Context;
+        public int Level;
+        public LevelSegmentItemRange SegmentRange;
+    }
+
+    public class LevelSegmentItemRange
+    {
+        public int StartIndex;
+        public int EndIndex;
     }
 }
