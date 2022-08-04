@@ -11,27 +11,39 @@ namespace fastLPI.tools.decompiler.analysis
 {
     public static class JavaSourseCodeAnalysisUtil
     {
-        public static string ProcessDesignateParenthesesBoundaries(string context, int start_index)
+        /// <summary>
+        ///     This method searches the context for quote boundaries, extracts them, 
+        /// and returns a value. This can be handy for finding a java method in context 
+        /// as well as its bounds.
+        /// 
+        ///     With each start character of the '{' bracket it goes up a level above 
+        /// 'parenthesesLevel', and with every end character of the '}' bracket it goes 
+        /// down a level, when it gets to the end it cuts the context and returns it.
+        /// </summary>
+        /// <param name="context">Source code context</param>
+        /// <param name="start_index">Parsing start index</param>
+        /// <returns></returns>
+        public static string ProcessDesignateParenthesesBoundaries(this string context, int startIndex)
         {
-            bool is_first = true;
-            int end_index = start_index;
-            int Parentheses_level = 0;
-            for (; end_index < context.Length; end_index++)
+            bool isFirst = true;
+            int endIndex = startIndex;
+            int parenthesesLevel = 0;
+            for (; endIndex < context.Length; endIndex++)
             {
-                if (context[end_index] == '{')
+                if (context[endIndex] == '{')
                 {
-                    Parentheses_level++;
-                    is_first = false;
+                    parenthesesLevel++;
+                    isFirst = false;
                 }
-                if (context[end_index] == '}')
+                if (context[endIndex] == '}')
                 {
-                    Parentheses_level--;
-                    if (Parentheses_level < 0) throw new CouldNotFindTheEndOfTheParenthesisLevelException();
+                    parenthesesLevel--;
+                    if (parenthesesLevel < 0) throw new CouldNotFindTheEndOfTheParenthesisLevelException();
                 }
-                if (Parentheses_level == 0 && !is_first) break;
+                if (parenthesesLevel == 0 && !isFirst) break;
             }
 
-            return context.Substring(start_index, end_index - start_index + 1);
+            return context.Substring(startIndex, endIndex - startIndex + 1);
         }
     }
 }
