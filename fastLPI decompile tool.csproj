@@ -103,6 +103,8 @@
     <Compile Include="Diagnostics\LPI_Libs_Remastering_Dump.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Exceptions.cs" />
+    <Compile Include="ExtraUtils\DataBuilding\JarClassesDecompilerProcess.cs" />
+    <Compile Include="ExtraUtils\DataBuilding\JarClassesModelBuilder.cs" />
     <Compile Include="IDecompilerProperties.cs" />
     <Compile Include="IJavaDecompiler.cs" />
     <Compile Include="IJavaDecompilerLogs.cs" />
@@ -124,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Java Sourse Code Analysis\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExtraUtils\WinForms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
