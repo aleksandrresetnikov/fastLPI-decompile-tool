@@ -21,11 +21,6 @@ Usage: <strong>jd-gui-forLPI </strong>\<path to jar file\> - Next to the selecte
 
 For more examples and help just email me (aleksandrresetnikov093@gmail.com).
 
-## ✅Help in development:
-At the moment I am working on this project alone from two accounts (the second account is needed to create a fork with an example). At the moment there are a large number of shortcomings, performance problems, as well as unfinished code analytics. 
-
-If you would like to contribute to this project, please email me (aleksandrresetnikov093@gmail.com).
-
 ## ✅Additionally:
 I started developing a java source code analyzer to determine which packages, classes, methods are in the library.
 
