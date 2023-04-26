@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 using fastLPI.tools.decompiler.helper;
@@ -45,8 +44,9 @@ namespace fastLPI.tools.decompiler.data.digest
             Queue<JarDocumentItem> outputValue = new Queue<JarDocumentItem>();
 
             foreach (string ImportReference in ImportReferences)
-                outputValue.EnqueueRange(new PackageJarDocumentItemsFromImportReferenceManager(PackageCollector, ImportReference)
-                    .GetJarDocumentItems().ToArray());
+                if (ImportReference != null && ImportReference != "") 
+                    outputValue.EnqueueRange(new PackageJarDocumentItemsFromImportReferenceManager(PackageCollector, ImportReference)
+                        .GetJarDocumentItems().ToArray());
 
             return outputValue;
         }

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace fastLPI.tools.decompiler.data
 {
     [System.Serializable()]
-    public class JarDocumentItem : IJarDocumentItem, IChildItemsQueueChanges
+    public class JarDocumentItem : IJarDocumentItem, IChildItemsQueueChanges, ICloneable, IDisposable
     {
         /// <summary>
         /// The path to the item.
@@ -88,6 +89,7 @@ namespace fastLPI.tools.decompiler.data
         public string Package
         { get; private protected set; }
 
+        #region constructors
         public JarDocumentItem(string ItemName)
         {
             this.ItemName = ItemName;
@@ -154,6 +156,7 @@ namespace fastLPI.tools.decompiler.data
             this.TabPath = TabPath;
             this.Package = Package;
         }
+        #endregion
 
         #region IJarDocumentItem
         public void SetItemLocationPath(string ItemLocationPath)
@@ -273,6 +276,31 @@ namespace fastLPI.tools.decompiler.data
         public override string ToString()
         {
             return this.ItemName;
+        }
+
+        public object Clone()
+        {
+            return new JarDocumentItem (this.ItemName){
+                ItemLocationPath = this.ItemLocationPath,
+                ItemContext = this.ItemContext,
+                ItemType = this.ItemType,
+                ParentDocumentItem = this.ParentDocumentItem,
+                ChildItems = this.ChildItems,
+                TabPath = this.TabPath,
+                AccessLevel = this.AccessLevel,
+                AccessLevelManager = this.AccessLevelManager,
+                Package = this.Package,
+            };
+        }
+
+        public void Dispose()
+        {
+            try
+            {
+                GC.SuppressFinalize(this);
+                GC.Collect();
+            }
+            catch (Exception _ex) { }
         }
         #endregion
     }
