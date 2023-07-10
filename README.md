@@ -19,7 +19,7 @@ Usage: <strong>jd-gui-forLPI </strong>\<path to jar file\> - Next to the selecte
 <strong>You can use the <a href="https://github.com/flyingmessages/fastLPI-decompile-tool-example">excellent example</a> using fastLPI-decompile-tool.</strong></br>
 <strong>You can see ready-made examples <a href="https://github.com/aleksandrresetnikov/fastLPI-decompile-tool/tree/main/Examples">here</a>.</strong>
 
-For more examples and help just email me (aleksandrresetnikov093@gmail.com).
+For more examples and help just email me (aleksandrresetnikov093@gmail.com)
 
 ## ✅Additionally:
 I started developing a java source code analyzer to determine which packages, classes, methods are in the library.
