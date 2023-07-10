@@ -7,7 +7,7 @@ I was making my own Java code editor in C#, I needed to know what packages, clas
 ## ✅Decision.
 I found a very handy <a href="https://github.com/intoolswetrust/jd-cli">jd-cli utility</a>, which was a branch of the <a href="https://github.com/java-decompiler/jd-core">JD-Core project</a>. It was decided to develop a C# Api, to which any decompiler could be connected. In this case, the input commands and parameters of the decompilers may differ, so you can specify your command dictionary, as well as add your own.
 
-### For example :
+### - For example :
 The jd-cli decompiler has an outputZipFile command that takes the value of the output zip path, and in the dictionary this command will be given as "-oz".
 
 ## ✅Usage the code analysis: 
